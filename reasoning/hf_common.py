@@ -276,8 +276,13 @@ def process_question(
     to 1, and ``extra_body={"reasoning_effort": "high"}`` is added.
     """
     qid = item.get("id") or item.get("question_id") or item.get("problem_id")
-    _problem = problem_text or item.get("problem") or item.get("question") or item.get("prompt")
-    _gold = gold_answer if gold_answer is not None else (item.get("answer") or item.get("solution"))
+    _problem = problem_text or item.get("problem") or item.get("question") or item.get("prompt") or item.get("Question")
+    _gold = gold_answer if gold_answer is not None else (item.get("answer") or item.get("solution") or item.get("Answer"))
+
+    if _problem is None:
+        raise ValueError("Cannot find problem text in item: " + str(item))
+    if _gold is None:
+        raise ValueError("Cannot find gold answer in item: " + str(item))
 
     # Override sampling params for gpt-oss models
     # _temperature = 1 if _needs_fixed_sampling(model_name) else temperature
@@ -512,4 +517,8 @@ def add_common_args(ap):
     ap.add_argument("--max_workers", type=int, default=None, help="Max concurrent requests")
     ap.add_argument("--limit", type=int, default=None, help="Limit number of questions (for testing)")
     ap.add_argument("--eval-only", action="store_true", help="Evaluate existing results only")
+    ap.add_argument("--group_size", type=int, default=10)
+    ap.add_argument("--group_id", type=int, default=0)
+    ap.add_argument("--max_new_tokens", type=int, default=30000)
+    ap.add_argument("--seed", type=int, default=42)
     return ap

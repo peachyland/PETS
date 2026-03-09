@@ -24,8 +24,6 @@ def seed_everything(seed=42):
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
-seed_everything(42)
-
 
 PROMPT_TEMPLATE = """\
 Solve the following math problem step by step. Put your final answer
@@ -84,11 +82,10 @@ def main():
         default="HuggingFaceH4/aime_2024",
         help="Local parquet directory or HuggingFace dataset name (default: HuggingFaceH4/aime_2024)",
     )
-    ap.add_argument("--out", default="aime24_preds.jsonl", help="Output JSONL path")
-    ap.add_argument("--group_size", type=int, default=10)
-    ap.add_argument("--group_id", type=int, default=0)
-    ap.add_argument("--max_new_tokens", type=int, default=30000)
+    ap.add_argument("--out", default="./results/aime24_preds.jsonl", help="Output JSONL path")
     args = ap.parse_args()
+
+    seed_everything(args.seed)
 
     if args.eval_only:
         evaluate(args.out)

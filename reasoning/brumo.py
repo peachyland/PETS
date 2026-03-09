@@ -1,11 +1,28 @@
 #!/usr/bin/env python3
 """BRUMO 2025 inference and evaluation."""
 
+import os
+os.environ["HF_HOME"] = f"/home/rjie/orcd/scratch/.cache"
+
 import argparse
 import re
+import torch
 
-import common
+import hf_common as common
 
+import numpy as np
+import random
+
+def seed_everything(seed=42):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)  # 如果你有多个 GPU
+    
+    # 下面两行能保证卷积等操作的确定性，但会稍微降低运行速度
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
 
 PROMPT_TEMPLATE = """\
 Solve the following math problem step by step. Put your final answer
@@ -62,28 +79,48 @@ def main():
         default="MathArena/brumo_2025",
         help="Local parquet directory or HuggingFace dataset name (default: MathArena/brumo_2025)",
     )
-    ap.add_argument("--out", default="brumo_preds.jsonl", help="Output JSONL path")
+    ap.add_argument("--out", default="./results/brumo_preds.jsonl", help="Output JSONL path")
     args = ap.parse_args()
+
+    seed_everything(args.seed)
 
     if args.eval_only:
         evaluate(args.out)
         return
 
-    client, model = common.create_client(args.host, args.port, args.model_name)
+    # client, model = common.create_client(args.host, args.port, args.model_name)
+    model, tokenizer = common.create_model_tokenizer(args.model_name)
     dataset = common.load_parquet_or_hf(args.data_path, split="train")
-    if args.limit:
-        dataset = dataset[:args.limit]
+    # if args.limit:
+    #     dataset = dataset[:args.limit]
+
+    # Calculate start and end indices
+    start_idx = args.group_id * args.group_size
+    end_idx = start_idx + args.group_size
+
+    # Safety check for out-of-bounds
+    if start_idx >= len(dataset):
+        print(f"⚠️  Warning: group_id {args.group_id} is out of bounds for dataset size {len(dataset)}")
+        dataset = []
+    else:
+        # Slice the dataset
+        dataset = dataset[start_idx : end_idx]
+        actual_count = len(dataset)
+        print(f"   Group ID: {args.group_id}")
+        print(f"   Range: [{start_idx} : {start_idx + actual_count}]")
+
     print(f"Loaded {len(dataset)} problems\n")
 
     def process(item):
         return common.process_question(
-            client, model, item,
+            model, tokenizer, item, model_name=args.model_name,
             n_samples=args.n, temperature=args.temperature,
             top_p=args.top_p, top_logprobs=args.top_logprobs,
             prompt_text=build_prompt(item),
             extract_fn=extract_answer,
             vote_fn=common.vote_majority_equiv,
             system_prompt="You are a helpful assistant that solves math problems.",
+            max_new_tokens=args.max_new_tokens,
         )
 
     common.run_inference(dataset, process, args.out, args.max_workers, desc="BRUMO 2025")
