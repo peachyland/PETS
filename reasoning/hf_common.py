@@ -506,8 +506,8 @@ def add_common_args(ap):
     ap.add_argument("--model_name", "-m", default=None,
                     help="Model name served by vLLM (auto-detect if omitted)")
     ap.add_argument("--n", type=int, default=1, help="Number of samples per question")
-    ap.add_argument("--temperature", type=float, default=0.0, help="Sampling temperature")
-    ap.add_argument("--top_p", type=float, default=1.0, help="Nucleus sampling top-p")
+    ap.add_argument("--temperature", type=float, default=1.0, help="Sampling temperature")
+    ap.add_argument("--top_p", type=float, default=0.9, help="Nucleus sampling top-p")
     ap.add_argument("--top_logprobs", type=int, default=20, help="Top-k logprobs for confidence")
     ap.add_argument("--max_workers", type=int, default=None, help="Max concurrent requests")
     ap.add_argument("--limit", type=int, default=None, help="Limit number of questions (for testing)")
