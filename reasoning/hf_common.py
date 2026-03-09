@@ -291,14 +291,14 @@ def process_question(
             {"role": "user", "content": prompt_text},
         ],
         n=n_samples,
-        temperature=_temperature,
-        top_p=_top_p,
+        temperature=temperature,
+        top_p=top_p,
         # logprobs=True,
         # top_logprobs=top_logprobs,
         timeout=None,
     )
-    if _extra_body:
-        request_kwargs["extra_body"] = _extra_body
+    # if _extra_body:
+    #     request_kwargs["extra_body"] = _extra_body
 
     # resp = client.chat.completions.create(**request_kwargs)
 
@@ -314,25 +314,18 @@ def process_question(
     prompt_len = inputs["input_ids"].shape[1]
 
     # ---- generate deterministic answer ----
-    from time import time
-
-    # timer_start = time()
 
     gen_ids = model.generate(
         **inputs,
-        max_new_tokens=args.max_new_tokens,
+        max_new_tokens=max_new_tokens,
         do_sample=True,
-        temperature=1,
-        top_p=0.9,
+        temperature=temperature,
+        top_p=top_p,
         use_cache=True,
         num_return_sequences=n_samples,
     )
     answer_ids = gen_ids[:, prompt_len:]
     decoded_answer_batch = tokenizer.batch_decode(answer_ids, skip_special_tokens=True)
-
-    # timer_end = time()
-    # print(f"Generated answer in {timer_end - timer_start:.2f}") # 237
-    # import pdb ; pdb.set_trace()
 
     answers, raw_outputs, traces = [], [], []
     for idx, decoded_answer in enumerate(decoded_answer_batch):

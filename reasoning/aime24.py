@@ -97,8 +97,24 @@ def main():
     # client, model = common.create_client(args.host, args.port, args.model_name)
     model, tokenizer = common.create_model_tokenizer(args.model_name)
     dataset = common.load_parquet_or_hf(args.data_path, split="train")
-    if args.limit:
-        dataset = dataset[:args.limit]
+    # if args.limit:
+    #     dataset = dataset[:args.limit]
+
+    # Calculate start and end indices
+    start_idx = args.group_id * args.group_size
+    end_idx = start_idx + args.group_size
+
+    # Safety check for out-of-bounds
+    if start_idx >= len(dataset):
+        print(f"⚠️  Warning: group_id {args.group_id} is out of bounds for dataset size {len(dataset)}")
+        dataset = []
+    else:
+        # Slice the dataset
+        dataset = dataset[start_idx : end_idx]
+        actual_count = len(dataset)
+        print(f"   Group ID: {args.group_id}")
+        print(f"   Range: [{start_idx} : {start_idx + actual_count}]")
+
     print(f"Loaded {len(dataset)} problems\n")
 
     def process(item):
