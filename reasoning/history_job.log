@@ -1,0 +1,10 @@
+Mon Mar  9 19:43:17 EDT 2026
+
+GPU_ID=0
+python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --data_path HuggingFaceH4/aime_2024 --out ./results/aime24_results.jsonl --n 128
+---------------------------------------------------------------
+Mon Mar  9 19:45:03 EDT 2026
+1
+GPU_ID=0
+python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --data_path HuggingFaceH4/aime_2024 --out ./results/aime24_results.jsonl --n 128 --max_new_tokens 30000 --group_size 10 --group_id 0 --temperature 1.0 --top_p 0.9
+---------------------------------------------------------------

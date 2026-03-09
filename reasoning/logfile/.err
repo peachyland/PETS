@@ -1,0 +1,5 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Unrecognized keys in `rope_scaling` for 'rope_type'='yarn': {'attn_factor'}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.34s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.35s/it]
+AIME 2024:   0%|          | 0/10 [00:00<?, ?q/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+./cmd/cmd_.sh: line 3: 1517993 Killed                  CUDA_VISIBLE_DEVICES='0' ${MY_CMD}
