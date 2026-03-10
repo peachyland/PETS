@@ -5,13 +5,13 @@ echo $NEXT_JOB_ID > job_id.log
 
 GPU_ID="0"
 
+GROUP_ID=0
 MODEL_NAME="deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
 DATA_PATH="HuggingFaceH4/aime_2024"
-OUT_PATH="./results/aime24_results.jsonl"
+OUT_PATH="./results/aime24_results_${GROUP_ID}.jsonl"
 N=128
 MAX_NEW_TOKENS=30000
 GROUP_SIZE=10
-GROUP_ID=0
 TEMPERATURE=1.0
 TOP_P=0.9
 SEED=42
