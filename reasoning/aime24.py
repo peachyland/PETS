@@ -2,7 +2,7 @@
 """AIME 2024 inference and evaluation."""
 
 import os
-os.environ["HF_HOME"] = f"/home/rjie/orcd/scratch/.cache"
+# os.environ["HF_HOME"] = f"/home/rjie/orcd/scratch/.cache"
 
 import argparse
 import re

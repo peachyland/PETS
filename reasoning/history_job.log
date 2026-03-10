@@ -8,3 +8,48 @@ Mon Mar  9 19:45:03 EDT 2026
 GPU_ID=0
 python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --data_path HuggingFaceH4/aime_2024 --out ./results/aime24_results.jsonl --n 128 --max_new_tokens 30000 --group_size 10 --group_id 0 --temperature 1.0 --top_p 0.9
 ---------------------------------------------------------------
+Mon Mar  9 20:18:24 EDT 2026
+2
+GPU_ID=0
+python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --data_path HuggingFaceH4/aime_2024 --out ./results/aime24_results_0.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 0 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
+Mon Mar  9 20:19:55 EDT 2026
+3
+GPU_ID=1
+python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --data_path HuggingFaceH4/aime_2024 --out ./results/aime24_results_1.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 1 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
+Mon Mar  9 20:20:42 EDT 2026
+4
+GPU_ID=2
+python aime25.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime25_results_0.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 0 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
+Mon Mar  9 20:20:51 EDT 2026
+5
+GPU_ID=3
+python aime25.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime25_results_1.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 1 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
+Mon Mar  9 20:22:32 EDT 2026
+6
+GPU_ID=2
+python aime25.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime25_results_0.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 0 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
+Mon Mar  9 20:22:46 EDT 2026
+7
+GPU_ID=3
+python aime25.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime25_results_1.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 1 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
+Mon Mar  9 20:26:04 EDT 2026
+8
+GPU_ID=4
+python brumo.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/brumo_results_0.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 0 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
+Mon Mar  9 20:26:15 EDT 2026
+9
+GPU_ID=5
+python brumo.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/brumo_results_1.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 1 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
+Mon Mar  9 20:27:08 EDT 2026
+10
+GPU_ID=6
+python hmmt.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/brumo_results_0.jsonl --n 128 --max_new_tokens 30000 --group_size 15 --group_id 0 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 64
+---------------------------------------------------------------
