@@ -8,14 +8,15 @@ GPU_ID="0"
 MODEL_NAME="deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
 DATA_PATH="HuggingFaceH4/aime_2024"
 OUT_PATH="./results/aime24_results.jsonl"
-N=128
+N=64
 MAX_NEW_TOKENS=30000
 GROUP_SIZE=10
 GROUP_ID=0
 TEMPERATURE=1.0
 TOP_P=0.9
+SEED=42
 
-MY_CMD="python aime24.py --model_name ${MODEL_NAME} --data_path ${DATA_PATH} --out ${OUT_PATH} --n ${N} --max_new_tokens ${MAX_NEW_TOKENS} --group_size ${GROUP_SIZE} --group_id ${GROUP_ID} --temperature ${TEMPERATURE} --top_p ${TOP_P}"
+MY_CMD="python aime24.py --model_name ${MODEL_NAME} --data_path ${DATA_PATH} --out ${OUT_PATH} --n ${N} --max_new_tokens ${MAX_NEW_TOKENS} --group_size ${GROUP_SIZE} --group_id ${GROUP_ID} --temperature ${TEMPERATURE} --top_p ${TOP_P} --seed ${SEED}"
 
 MY_ROOT_PATH=`pwd`
 

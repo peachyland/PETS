@@ -269,6 +269,7 @@ def process_question(
     gold_answer=None,
     problem_text=None,
     max_new_tokens=30000,
+    batch_size=1,
 ) -> Dict[str, Any]:
     """Send one prompt with ``n=n_samples`` and aggregate answers.
 
@@ -320,33 +321,36 @@ def process_question(
 
     # ---- generate deterministic answer ----
 
-    gen_ids = model.generate(
-        **inputs,
-        max_new_tokens=max_new_tokens,
-        do_sample=True,
-        temperature=temperature,
-        top_p=top_p,
-        use_cache=True,
-        num_return_sequences=n_samples,
-    )
-    answer_ids = gen_ids[:, prompt_len:]
-    decoded_answer_batch = tokenizer.batch_decode(answer_ids, skip_special_tokens=True)
-
     answers, raw_outputs, traces = [], [], []
-    for idx, decoded_answer in enumerate(decoded_answer_batch):
-        text = decoded_answer.strip()
-        ans = extract_fn(text)
-        raw_outputs.append(text)
-        answers.append(ans)
-        # conf = extract_conf_summary(choice)
-        traces.append({
-            "sample_idx": idx,
-            "answer": ans,
-            "text_len": len(text),
-            # "finish_reason": getattr(choice, "finish_reason", None),
-            # "conf_source": conf["source"],
-            # "conf_summary": conf["summary"],
-        })
+
+    run_times = n_samples // batch_size + (1 if n_samples % batch_size != 0 else 0)
+    for _ in range(run_times):
+        gen_ids = model.generate(
+            **inputs,
+            max_new_tokens=max_new_tokens,
+            do_sample=True,
+            temperature=temperature,
+            top_p=top_p,
+            use_cache=True,
+            num_return_sequences=batch_size,
+        )
+        answer_ids = gen_ids[:, prompt_len:]
+        decoded_answer_batch = tokenizer.batch_decode(answer_ids, skip_special_tokens=True)
+
+        for idx, decoded_answer in enumerate(decoded_answer_batch):
+            text = decoded_answer.strip()
+            ans = extract_fn(text)
+            raw_outputs.append(text)
+            answers.append(ans)
+            # conf = extract_conf_summary(choice)
+            traces.append({
+                "sample_idx": idx,
+                "answer": ans,
+                "text_len": len(text),
+                # "finish_reason": getattr(choice, "finish_reason", None),
+                # "conf_source": conf["source"],
+                # "conf_summary": conf["summary"],
+            })
 
     non_empty = [a for a in answers if a]
     final = vote_fn(non_empty) if non_empty else (answers[0] if answers else "")
@@ -521,4 +525,5 @@ def add_common_args(ap):
     ap.add_argument("--group_id", type=int, default=0)
     ap.add_argument("--max_new_tokens", type=int, default=30000)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--batch_size", type=int, default=1)
     return ap

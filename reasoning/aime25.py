@@ -122,6 +122,7 @@ def main():
             extract_fn=extract_answer,
             system_prompt="You are a helpful assistant that solves math problems.",
             max_new_tokens=args.max_new_tokens,
+            batch_size=args.batch_size,
         )
 
     common.run_inference(dataset, process, args.out, args.max_workers, desc="AIME 2025")

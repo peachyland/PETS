@@ -121,6 +121,7 @@ def main():
             vote_fn=common.vote_majority_equiv,
             system_prompt="You are a helpful assistant that solves math problems.",
             max_new_tokens=args.max_new_tokens,
+            batch_size=args.batch_size,
         )
 
     common.run_inference(dataset, process, args.out, args.max_workers, desc="HMMT Feb 2025")
