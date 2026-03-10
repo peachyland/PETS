@@ -3,16 +3,16 @@ echo $JOB_ID
 NEXT_JOB_ID=`expr $JOB_ID + 1`
 echo $NEXT_JOB_ID > job_id.log
 
-GPU_ID="0"
+GPU_ID="2"
 
-GROUP_ID=0
+GROUP_ID=2
 DATA_SET="aime24" # aime24 aime25 brumo hmmt
 MODEL_NAME="deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
 # DATA_PATH="HuggingFaceH4/aime_2024"
 OUT_PATH="./results/${DATA_SET}_results_${GROUP_ID}_${JOB_ID}.jsonl"
 N=128
 MAX_NEW_TOKENS=30000
-GROUP_SIZE=5
+GROUP_SIZE=10
 TEMPERATURE=1.0
 TOP_P=0.9
 SEED=42

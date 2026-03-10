@@ -183,3 +183,18 @@ Tue Mar 10 09:58:57 EDT 2026
 GPU_ID=0
 python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime24_results_0_38.jsonl --n 128 --max_new_tokens 30000 --group_size 5 --group_id 0 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 16
 ---------------------------------------------------------------
+Tue Mar 10 11:14:12 EDT 2026
+39
+GPU_ID=0
+python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime24_results_1_39.jsonl --n 128 --max_new_tokens 30000 --group_size 5 --group_id 1 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 16
+---------------------------------------------------------------
+Tue Mar 10 11:15:05 EDT 2026
+40
+GPU_ID=1
+python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime24_results_1_40.jsonl --n 128 --max_new_tokens 30000 --group_size 10 --group_id 1 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 16
+---------------------------------------------------------------
+Tue Mar 10 11:15:12 EDT 2026
+41
+GPU_ID=2
+python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime24_results_2_41.jsonl --n 128 --max_new_tokens 30000 --group_size 10 --group_id 2 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 16
+---------------------------------------------------------------

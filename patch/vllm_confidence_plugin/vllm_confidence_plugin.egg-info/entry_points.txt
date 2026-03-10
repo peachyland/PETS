@@ -1,0 +1,2 @@
+[vllm.general_plugins]
+confidence_logprobs = vllm_confidence_plugin:register

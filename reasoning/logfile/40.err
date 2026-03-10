@@ -1,0 +1,22 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'attn_factor'}
+`torch_dtype` is deprecated! Use `dtype` instead!
+Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'attn_factor'}
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   0%|          | 1/399 [00:00<03:02,  2.18it/s]Loading weights:   1%|          | 2/399 [00:00<01:44,  3.78it/s]Loading weights:   9%|▉         | 37/399 [00:00<00:04, 80.62it/s]Loading weights:  13%|█▎        | 50/399 [00:00<00:04, 79.71it/s]Loading weights:  18%|█▊        | 70/399 [00:00<00:03, 106.50it/s]Loading weights:  21%|██        | 84/399 [00:01<00:02, 113.06it/s]Loading weights:  25%|██▌       | 100/399 [00:01<00:02, 114.50it/s]Loading weights:  29%|██▉       | 116/399 [00:01<00:02, 121.95it/s]Loading weights:  33%|███▎      | 133/399 [00:01<00:02, 124.55it/s]Loading weights:  37%|███▋      | 149/399 [00:01<00:01, 127.92it/s]Loading weights:  42%|████▏     | 169/399 [00:01<00:01, 139.79it/s]Loading weights:  46%|████▌     | 184/399 [00:01<00:01, 137.60it/s]Loading weights:  50%|█████     | 201/399 [00:01<00:01, 143.48it/s]Loading weights:  54%|█████▍    | 216/399 [00:02<00:01, 137.69it/s]Loading weights:  58%|█████▊    | 230/399 [00:02<00:01, 133.81it/s]Loading weights:  62%|██████▏   | 246/399 [00:02<00:01, 137.38it/s]Loading weights:  65%|██████▌   | 260/399 [00:02<00:01, 134.44it/s]Loading weights:  70%|██████▉   | 279/399 [00:02<00:00, 138.13it/s]Loading weights:  73%|███████▎  | 293/399 [00:02<00:00, 135.68it/s]Loading weights:  78%|███████▊  | 312/399 [00:02<00:00, 142.76it/s]Loading weights:  82%|████████▏ | 327/399 [00:02<00:00, 141.73it/s]Loading weights:  86%|████████▋ | 345/399 [00:02<00:00, 146.07it/s]Loading weights:  90%|█████████ | 360/399 [00:03<00:00, 141.76it/s]Loading weights:  95%|█████████▍| 378/399 [00:03<00:00, 145.26it/s]Loading weights:  98%|█████████▊| 393/399 [00:03<00:00, 141.31it/s]Loading weights: 100%|██████████| 399/399 [00:03<00:00, 120.41it/s]
+AIME 2024:   0%|          | 0/10 [00:00<?, ?q/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+AIME 2024:  10%|█         | 1/10 [4:11:36<37:44:25, 15096.17s/q]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Killed
