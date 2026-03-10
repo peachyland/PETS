@@ -1,0 +1,11 @@
+Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'attn_factor'}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'attn_factor'}
+Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   0%|          | 1/399 [00:00<03:24,  1.95it/s]Loading weights:   9%|▉         | 37/399 [00:00<00:04, 74.03it/s]Loading weights:  15%|█▌        | 60/399 [00:00<00:03, 106.53it/s]Loading weights:  20%|█▉        | 79/399 [00:00<00:02, 124.84it/s]Loading weights:  25%|██▍       | 98/399 [00:00<00:02, 139.85it/s]Loading weights:  29%|██▉       | 117/399 [00:01<00:01, 143.72it/s]Loading weights:  34%|███▍      | 137/399 [00:01<00:01, 151.19it/s]Loading weights:  40%|███▉      | 158/399 [00:01<00:01, 165.92it/s]Loading weights:  44%|████▍     | 177/399 [00:01<00:01, 171.89it/s]Loading weights:  49%|████▉     | 196/399 [00:01<00:01, 172.88it/s]Loading weights:  54%|█████▍    | 215/399 [00:01<00:01, 170.83it/s]Loading weights:  59%|█████▉    | 235/399 [00:01<00:00, 170.27it/s]Loading weights:  64%|██████▍   | 257/399 [00:01<00:00, 183.28it/s]Loading weights:  70%|██████▉   | 279/399 [00:01<00:00, 185.42it/s]Loading weights:  75%|███████▌  | 301/399 [00:02<00:00, 186.26it/s]Loading weights:  80%|████████  | 320/399 [00:02<00:00, 186.83it/s]Loading weights:  85%|████████▍ | 339/399 [00:02<00:00, 187.14it/s]Loading weights:  90%|████████▉ | 358/399 [00:02<00:00, 183.00it/s]Loading weights:  94%|█████████▍| 377/399 [00:02<00:00, 182.99it/s]Loading weights: 100%|██████████| 399/399 [00:02<00:00, 153.58it/s]
+AIME 2025:   0%|          | 0/15 [00:00<?, ?q/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+AIME 2025:   7%|▋         | 1/15 [12:05<2:49:16, 725.49s/q]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Killed

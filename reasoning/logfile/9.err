@@ -5,3 +5,82 @@ Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'attn_factor'}
 Loading weights:   0%|          | 0/399 [00:00<?, ?it/s]Loading weights:   0%|          | 1/399 [00:00<06:32,  1.02it/s]Loading weights:   1%|          | 2/399 [00:01<03:31,  1.87it/s]Loading weights:  10%|▉         | 38/399 [00:01<00:07, 50.16it/s]Loading weights:  14%|█▎        | 54/399 [00:01<00:05, 66.26it/s]Loading weights:  17%|█▋        | 69/399 [00:01<00:04, 76.06it/s]Loading weights:  21%|██        | 83/399 [00:01<00:03, 80.58it/s]Loading weights:  26%|██▌       | 103/399 [00:01<00:02, 101.27it/s]Loading weights:  29%|██▉       | 117/399 [00:01<00:02, 107.54it/s]Loading weights:  33%|███▎      | 131/399 [00:02<00:02, 114.85it/s]Loading weights:  36%|███▋      | 145/399 [00:02<00:02, 112.00it/s]Loading weights:  40%|███▉      | 158/399 [00:02<00:02, 105.01it/s]Loading weights:  43%|████▎     | 170/399 [00:02<00:02, 101.14it/s]Loading weights:  45%|████▌     | 181/399 [00:02<00:02, 102.90it/s]Loading weights:  50%|█████     | 200/399 [00:02<00:01, 121.09it/s]Loading weights:  53%|█████▎    | 213/399 [00:02<00:01, 107.67it/s]Loading weights:  56%|█████▋    | 225/399 [00:02<00:01, 107.01it/s]Loading weights:  59%|█████▉    | 237/399 [00:03<00:01, 107.13it/s]Loading weights:  62%|██████▏   | 248/399 [00:03<00:01, 104.35it/s]Loading weights:  67%|██████▋   | 266/399 [00:03<00:01, 122.44it/s]Loading weights:  70%|██████▉   | 279/399 [00:03<00:01, 108.42it/s]Loading weights:  73%|███████▎  | 291/399 [00:03<00:00, 109.53it/s]Loading weights:  76%|███████▋  | 305/399 [00:03<00:00, 116.75it/s]Loading weights:  80%|████████  | 320/399 [00:03<00:00, 112.22it/s]Loading weights:  84%|████████▎ | 334/399 [00:03<00:00, 114.30it/s]Loading weights:  87%|████████▋ | 346/399 [00:03<00:00, 114.43it/s]Loading weights:  90%|████████▉ | 358/399 [00:04<00:00, 115.12it/s]Loading weights:  94%|█████████▍| 375/399 [00:04<00:00, 124.31it/s]Loading weights:  97%|█████████▋| 389/399 [00:04<00:00, 113.41it/s]Loading weights: 100%|██████████| 399/399 [00:04<00:00, 91.37it/s] 
 Generating train split:   0%|          | 0/30 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 30/30 [00:00<00:00, 11531.26 examples/s]
 BRUMO 2025:   0%|          | 0/15 [00:00<?, ?q/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+BRUMO 2025:   0%|          | 0/15 [28:28<?, ?q/s]
+Traceback (most recent call last):
+  File "/data/scratch/rjie/tts/PETS/reasoning/brumo.py", line 131, in <module>
+    main()
+  File "/data/scratch/rjie/tts/PETS/reasoning/brumo.py", line 127, in main
+    common.run_inference(dataset, process, args.out, args.max_workers, desc="BRUMO 2025")
+  File "/data/scratch/rjie/tts/PETS/reasoning/hf_common.py", line 386, in run_inference
+    res = process_fn(item)
+          ^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/tts/PETS/reasoning/brumo.py", line 115, in process
+    return common.process_question(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/tts/PETS/reasoning/hf_common.py", line 328, in process_question
+    gen_ids = model.generate(
+              ^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/generation/utils.py", line 2535, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/generation/utils.py", line 2742, in _sample
+    outputs = model_forward(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/utils/generic.py", line 843, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 506, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/utils/generic.py", line 917, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/utils/output_capturing.py", line 253, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 436, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/modeling_layers.py", line 93, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 323, in forward
+    hidden_states, _ = self.self_attn(
+                       ^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 274, in forward
+    key_states, value_states = past_key_values.update(key_states, value_states, self.layer_idx, cache_kwargs)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/cache_utils.py", line 792, in update
+    keys, values = self.layers[layer_idx].update(key_states, value_states, cache_kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/transformers/cache_utils.py", line 120, in update
+    self.keys = torch.cat([self.keys, key_states], dim=-2)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.67 GiB. GPU 0 has a total capacity of 139.80 GiB of which 1.58 GiB is free. Including non-PyTorch memory, this process has 138.21 GiB memory in use. Of the allocated memory 135.52 GiB is allocated by PyTorch, and 2.03 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

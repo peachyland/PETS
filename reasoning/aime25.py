@@ -36,7 +36,7 @@ Reasoning:"""
 
 
 def build_prompt(item):
-    problem = item.get("problem") or item.get("question") or item.get("prompt", "")
+    problem = item.get("problem") or item.get("question") or item.get("Question") or item.get("prompt", "")
     return PROMPT_TEMPLATE.format(problem=problem)
 
 
