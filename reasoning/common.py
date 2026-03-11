@@ -265,8 +265,8 @@ def process_question(
     to 1, and ``extra_body={"reasoning_effort": "high"}`` is added.
     """
     qid = item.get("id") or item.get("question_id") or item.get("problem_id")
-    _problem = problem_text or item.get("problem") or item.get("question") or item.get("prompt")
-    _gold = gold_answer if gold_answer is not None else (item.get("answer") or item.get("solution"))
+    _problem = problem_text or item.get("problem") or item.get("question") or item.get("Question") or item.get("prompt")
+    _gold = gold_answer if gold_answer is not None else (item.get("answer") or item.get("Answer") or item.get("solution"))
 
     # Override sampling params for gpt-oss models
     _temperature = 1 if _needs_fixed_sampling(model) else temperature
