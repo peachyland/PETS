@@ -13,9 +13,7 @@ in a \\boxed{{}} command.
 
 {problem}
 
-Remember to put your final answer in \\boxed{{}}.
-
-Reasoning:"""
+Remember to put your final answer in \\boxed{{}}."""
 
 
 def build_prompt(item):
@@ -70,6 +68,9 @@ def main():
     if args.eval_only:
         evaluate(args.out)
         return
+    
+    common.seed_everything(args.seed)
+    print(f"seed set to {args.seed}")
 
     client, model = common.create_client(args.host, args.port, args.model_name)
     dataset = common.load_parquet_or_hf(args.data_path, split="train")

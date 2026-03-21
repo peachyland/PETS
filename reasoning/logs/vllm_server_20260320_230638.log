@@ -1,0 +1,470 @@
+INFO 03-20 23:07:51 [utils.py:325] 
+INFO 03-20 23:07:51 [utils.py:325]        █     █     █▄   ▄█
+INFO 03-20 23:07:51 [utils.py:325]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.15.1
+INFO 03-20 23:07:51 [utils.py:325]   █▄█▀ █     █     █     █  model   mistralai/Ministral-3-8B-Reasoning-2512
+INFO 03-20 23:07:51 [utils.py:325]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+INFO 03-20 23:07:51 [utils.py:325] 
+INFO 03-20 23:07:51 [utils.py:261] non-default args: {'model_tag': 'mistralai/Ministral-3-8B-Reasoning-2512', 'api_server_count': 6, 'host': '0.0.0.0', 'enable_auto_tool_choice': True, 'tool_call_parser': 'mistral', 'model': 'mistralai/Ministral-3-8B-Reasoning-2512', 'tokenizer_mode': 'mistral', 'config_format': 'mistral', 'load_format': 'mistral', 'reasoning_parser': 'mistral', 'data_parallel_size': 3, 'gpu_memory_utilization': 0.97}
+INFO 03-20 23:07:52 [model.py:541] Resolved architecture: PixtralForConditionalGeneration
+INFO 03-20 23:07:52 [model.py:1561] Using max model len 262144
+INFO 03-20 23:07:53 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-20 23:07:53 [vllm.py:624] Asynchronous scheduling is enabled.
+INFO 03-20 23:07:53 [utils.py:851] Started DP Coordinator process (PID: 3416771)
+INFO 03-20 23:07:53 [utils.py:218] Started 6 API server processes
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m INFO 03-20 23:09:09 [core.py:96] Initializing a V1 LLM engine (v0.15.1) with config: model='mistralai/Ministral-3-8B-Reasoning-2512', speculative_config=None, tokenizer='mistralai/Ministral-3-8B-Reasoning-2512', skip_tokenizer_init=False, tokenizer_mode=mistral, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=262144, download_dir=None, load_format=mistral, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='mistral', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=mistralai/Ministral-3-8B-Reasoning-2512, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': True}, 'local_cache_dir': None, 'static_all_moe_layers': []}
+[0;36m(ApiServer_4 pid=3416782)[0;0m INFO 03-20 23:09:10 [model.py:541] Resolved architecture: PixtralForConditionalGeneration
+[0;36m(ApiServer_4 pid=3416782)[0;0m INFO 03-20 23:09:10 [model.py:1561] Using max model len 262144
+[0;36m(ApiServer_5 pid=3416783)[0;0m INFO 03-20 23:09:10 [model.py:541] Resolved architecture: PixtralForConditionalGeneration
+[0;36m(ApiServer_5 pid=3416783)[0;0m INFO 03-20 23:09:10 [model.py:1561] Using max model len 262144
+[0;36m(ApiServer_3 pid=3416781)[0;0m INFO 03-20 23:09:10 [model.py:541] Resolved architecture: PixtralForConditionalGeneration
+[0;36m(ApiServer_3 pid=3416781)[0;0m INFO 03-20 23:09:10 [model.py:1561] Using max model len 262144
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m [2026-03-20 23:09:10] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_2 pid=3416780)[0;0m INFO 03-20 23:09:10 [model.py:541] Resolved architecture: PixtralForConditionalGeneration
+[0;36m(ApiServer_2 pid=3416780)[0;0m INFO 03-20 23:09:10 [model.py:1561] Using max model len 262144
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m [2026-03-20 23:09:10] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_1 pid=3416779)[0;0m INFO 03-20 23:09:10 [model.py:541] Resolved architecture: PixtralForConditionalGeneration
+[0;36m(ApiServer_1 pid=3416779)[0;0m INFO 03-20 23:09:10 [model.py:1561] Using max model len 262144
+[0;36m(ApiServer_0 pid=3416778)[0;0m INFO 03-20 23:09:10 [model.py:541] Resolved architecture: PixtralForConditionalGeneration
+[0;36m(ApiServer_0 pid=3416778)[0;0m INFO 03-20 23:09:10 [model.py:1561] Using max model len 262144
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m [2026-03-20 23:09:10] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_4 pid=3416782)[0;0m INFO 03-20 23:09:11 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_0 pid=3416778)[0;0m INFO 03-20 23:09:11 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_0 pid=3416778)[0;0m INFO 03-20 23:09:11 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_4 pid=3416782)[0;0m INFO 03-20 23:09:11 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_2 pid=3416780)[0;0m INFO 03-20 23:09:11 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_1 pid=3416779)[0;0m INFO 03-20 23:09:11 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_5 pid=3416783)[0;0m INFO 03-20 23:09:11 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_2 pid=3416780)[0;0m INFO 03-20 23:09:11 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_5 pid=3416783)[0;0m INFO 03-20 23:09:11 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_1 pid=3416779)[0;0m INFO 03-20 23:09:11 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_3 pid=3416781)[0;0m INFO 03-20 23:09:11 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_3 pid=3416781)[0;0m INFO 03-20 23:09:11 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_4 pid=3416782)[0;0m [2026-03-20 23:09:12] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_3 pid=3416781)[0;0m [2026-03-20 23:09:12] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_0 pid=3416778)[0;0m [2026-03-20 23:09:12] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_1 pid=3416779)[0;0m [2026-03-20 23:09:12] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_2 pid=3416780)[0;0m [2026-03-20 23:09:12] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_5 pid=3416783)[0;0m [2026-03-20 23:09:13] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m INFO 03-20 23:09:13 [parallel_state.py:1212] world_size=1 rank=0 local_rank=2 distributed_init_method=tcp://128.30.204.12:46527 backend=nccl
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m INFO 03-20 23:09:13 [parallel_state.py:1212] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://128.30.204.12:49465 backend=nccl
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m INFO 03-20 23:09:13 [parallel_state.py:1212] world_size=1 rank=0 local_rank=1 distributed_init_method=tcp://128.30.204.12:37403 backend=nccl
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m INFO 03-20 23:09:13 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m INFO 03-20 23:09:13 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(ApiServer_3 pid=3416781)[0;0m [2026-03-20 23:09:14] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_4 pid=3416782)[0;0m [2026-03-20 23:09:14] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_5 pid=3416783)[0;0m [2026-03-20 23:09:14] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_0 pid=3416778)[0;0m [2026-03-20 23:09:14] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_2 pid=3416780)[0;0m [2026-03-20 23:09:14] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(ApiServer_1 pid=3416779)[0;0m [2026-03-20 23:09:14] INFO tekken.py:204: Non special vocabulary size is 130072 with 1000 special tokens.
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m INFO 03-20 23:09:17 [gpu_model_runner.py:4033] Starting to load model mistralai/Ministral-3-8B-Reasoning-2512...
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m INFO 03-20 23:09:17 [gpu_model_runner.py:4033] Starting to load model mistralai/Ministral-3-8B-Reasoning-2512...
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m INFO 03-20 23:09:17 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m INFO 03-20 23:09:17 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m INFO 03-20 23:09:18 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m INFO 03-20 23:09:21 [cuda.py:364] Using FLASH_ATTN attention backend out of potential backends: ('FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION')
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m INFO 03-20 23:09:21 [gpu_model_runner.py:4033] Starting to load model mistralai/Ministral-3-8B-Reasoning-2512...
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m INFO 03-20 23:09:21 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m INFO 03-20 23:09:21 [weight_utils.py:567] No consolidated.safetensors.index.json found in remote.
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m INFO 03-20 23:09:22 [weight_utils.py:567] No consolidated.safetensors.index.json found in remote.
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:01<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m 
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:01<?, ?it/s]
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m 
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946] EngineCore failed to start.
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946] Traceback (most recent call last):
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 937, in run_engine_core
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 691, in __init__
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     super().__init__(
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 105, in __init__
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self._init_executor()
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/uniproc_executor.py", line 48, in _init_executor
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.driver_worker.load_model()
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 275, in load_model
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.model_runner.load_model(eep_scale_up=eep_scale_up)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4052, in load_model
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.model = model_loader.load_model(
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]                  ^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/base_loader.py", line 58, in load_model
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.load_weights(model, model_config)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 288, in load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     loaded_weights = model.load_weights(self.get_all_weights(model_config, model))
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 586, in load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.language_model.load_weights(llm_weights_generator())
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     return loader.load_weights(
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/online_quantization.py", line 173, in patched_model_load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     return original_load_weights(auto_weight_loader, weights, mapper=mapper)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 342, in load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     autoloaded_weights = set(self._load_module("", self.module, weights))
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 281, in _load_module
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     for child_prefix, child_weights in self._groupby_prefix(weights):
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 165, in _groupby_prefix
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     for prefix, group in itertools.groupby(weights_by_parts, key=lambda x: x[0][0]):
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 160, in <genexpr>
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     weights_by_parts = (
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]                        ^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 338, in <genexpr>
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     weights = (
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]               ^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in <genexpr>
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     return loader.load_weights(
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]                               ^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 543, in llm_weights_generator
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     for name, w in weights:
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 260, in get_all_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     yield from self._get_weights_iterator(primary_weights)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 246, in <genexpr>
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     return ((source.prefix + name, tensor) for (name, tensor) in weights_iterator)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/weight_utils.py", line 725, in safetensors_weights_iterator
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]     with safe_open(st_file, framework="pt") as f:
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m ERROR 03-20 23:09:23 [core.py:946] safetensors_rust.SafetensorError: Error while deserializing header: incomplete metadata, file not fully covered
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m Process EngineCore_DP1:
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self.run()
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 950, in run_engine_core
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     raise e
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 937, in run_engine_core
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 691, in __init__
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     super().__init__(
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 105, in __init__
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/uniproc_executor.py", line 48, in _init_executor
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self.driver_worker.load_model()
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 275, in load_model
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self.model_runner.load_model(eep_scale_up=eep_scale_up)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4052, in load_model
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self.model = model_loader.load_model(
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m                  ^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/base_loader.py", line 58, in load_model
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self.load_weights(model, model_config)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 288, in load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     loaded_weights = model.load_weights(self.get_all_weights(model_config, model))
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 586, in load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     self.language_model.load_weights(llm_weights_generator())
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     return loader.load_weights(
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m            ^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/online_quantization.py", line 173, in patched_model_load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     return original_load_weights(auto_weight_loader, weights, mapper=mapper)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 342, in load_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     autoloaded_weights = set(self._load_module("", self.module, weights))
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 281, in _load_module
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     for child_prefix, child_weights in self._groupby_prefix(weights):
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 165, in _groupby_prefix
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     for prefix, group in itertools.groupby(weights_by_parts, key=lambda x: x[0][0]):
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 160, in <genexpr>
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     weights_by_parts = (
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m                        ^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 338, in <genexpr>
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     weights = (
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m               ^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in <genexpr>
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     return loader.load_weights(
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m                               ^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 543, in llm_weights_generator
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     for name, w in weights:
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 260, in get_all_weights
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     yield from self._get_weights_iterator(primary_weights)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 246, in <genexpr>
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     return ((source.prefix + name, tensor) for (name, tensor) in weights_iterator)
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/weight_utils.py", line 725, in safetensors_weights_iterator
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m     with safe_open(st_file, framework="pt") as f:
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP1 pid=3416776)[0;0m safetensors_rust.SafetensorError: Error while deserializing header: incomplete metadata, file not fully covered
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946] EngineCore failed to start.
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946] Traceback (most recent call last):
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 937, in run_engine_core
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 691, in __init__
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     super().__init__(
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 105, in __init__
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self._init_executor()
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/uniproc_executor.py", line 48, in _init_executor
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.driver_worker.load_model()
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 275, in load_model
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.model_runner.load_model(eep_scale_up=eep_scale_up)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4052, in load_model
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.model = model_loader.load_model(
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]                  ^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/base_loader.py", line 58, in load_model
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.load_weights(model, model_config)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 288, in load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     loaded_weights = model.load_weights(self.get_all_weights(model_config, model))
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 586, in load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     self.language_model.load_weights(llm_weights_generator())
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     return loader.load_weights(
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/online_quantization.py", line 173, in patched_model_load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     return original_load_weights(auto_weight_loader, weights, mapper=mapper)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 342, in load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     autoloaded_weights = set(self._load_module("", self.module, weights))
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 281, in _load_module
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     for child_prefix, child_weights in self._groupby_prefix(weights):
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 165, in _groupby_prefix
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     for prefix, group in itertools.groupby(weights_by_parts, key=lambda x: x[0][0]):
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 160, in <genexpr>
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     weights_by_parts = (
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]                        ^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 338, in <genexpr>
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     weights = (
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]               ^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in <genexpr>
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     return loader.load_weights(
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]                               ^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 543, in llm_weights_generator
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     for name, w in weights:
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 260, in get_all_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     yield from self._get_weights_iterator(primary_weights)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 246, in <genexpr>
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     return ((source.prefix + name, tensor) for (name, tensor) in weights_iterator)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/weight_utils.py", line 725, in safetensors_weights_iterator
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]     with safe_open(st_file, framework="pt") as f:
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m ERROR 03-20 23:09:23 [core.py:946] safetensors_rust.SafetensorError: Error while deserializing header: incomplete metadata, file not fully covered
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m Process EngineCore_DP0:
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self.run()
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 950, in run_engine_core
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     raise e
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 937, in run_engine_core
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 691, in __init__
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     super().__init__(
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 105, in __init__
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/uniproc_executor.py", line 48, in _init_executor
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self.driver_worker.load_model()
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 275, in load_model
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self.model_runner.load_model(eep_scale_up=eep_scale_up)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4052, in load_model
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self.model = model_loader.load_model(
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m                  ^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/base_loader.py", line 58, in load_model
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self.load_weights(model, model_config)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 288, in load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     loaded_weights = model.load_weights(self.get_all_weights(model_config, model))
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 586, in load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     self.language_model.load_weights(llm_weights_generator())
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     return loader.load_weights(
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m            ^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/online_quantization.py", line 173, in patched_model_load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     return original_load_weights(auto_weight_loader, weights, mapper=mapper)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 342, in load_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     autoloaded_weights = set(self._load_module("", self.module, weights))
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 281, in _load_module
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     for child_prefix, child_weights in self._groupby_prefix(weights):
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 165, in _groupby_prefix
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     for prefix, group in itertools.groupby(weights_by_parts, key=lambda x: x[0][0]):
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 160, in <genexpr>
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     weights_by_parts = (
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m                        ^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 338, in <genexpr>
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     weights = (
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m               ^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in <genexpr>
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     return loader.load_weights(
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m                               ^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 543, in llm_weights_generator
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     for name, w in weights:
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 260, in get_all_weights
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     yield from self._get_weights_iterator(primary_weights)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 246, in <genexpr>
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     return ((source.prefix + name, tensor) for (name, tensor) in weights_iterator)
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/weight_utils.py", line 725, in safetensors_weights_iterator
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m     with safe_open(st_file, framework="pt") as f:
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP0 pid=3416774)[0;0m safetensors_rust.SafetensorError: Error while deserializing header: incomplete metadata, file not fully covered
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m INFO 03-20 23:09:24 [weight_utils.py:567] No consolidated.safetensors.index.json found in remote.
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m 
+[rank0]:[W320 23:09:24.179518472 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946] EngineCore failed to start.
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946] Traceback (most recent call last):
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 937, in run_engine_core
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 691, in __init__
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     super().__init__(
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 105, in __init__
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     self._init_executor()
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/uniproc_executor.py", line 48, in _init_executor
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     self.driver_worker.load_model()
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 275, in load_model
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     self.model_runner.load_model(eep_scale_up=eep_scale_up)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4052, in load_model
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     self.model = model_loader.load_model(
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]                  ^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/base_loader.py", line 58, in load_model
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     self.load_weights(model, model_config)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 288, in load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     loaded_weights = model.load_weights(self.get_all_weights(model_config, model))
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 586, in load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     self.language_model.load_weights(llm_weights_generator())
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     return loader.load_weights(
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/online_quantization.py", line 173, in patched_model_load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     return original_load_weights(auto_weight_loader, weights, mapper=mapper)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 342, in load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     autoloaded_weights = set(self._load_module("", self.module, weights))
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 281, in _load_module
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     for child_prefix, child_weights in self._groupby_prefix(weights):
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 165, in _groupby_prefix
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     for prefix, group in itertools.groupby(weights_by_parts, key=lambda x: x[0][0]):
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 160, in <genexpr>
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     weights_by_parts = (
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]                        ^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 338, in <genexpr>
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     weights = (
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]               ^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in <genexpr>
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     return loader.load_weights(
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]                               ^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 543, in llm_weights_generator
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     for name, w in weights:
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 260, in get_all_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     yield from self._get_weights_iterator(primary_weights)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 246, in <genexpr>
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     return ((source.prefix + name, tensor) for (name, tensor) in weights_iterator)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/weight_utils.py", line 725, in safetensors_weights_iterator
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]     with safe_open(st_file, framework="pt") as f:
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m ERROR 03-20 23:09:24 [core.py:946] safetensors_rust.SafetensorError: Error while deserializing header: incomplete metadata, file not fully covered
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m Process EngineCore_DP2:
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m Traceback (most recent call last):
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self.run()
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/multiprocessing/process.py", line 108, in run
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self._target(*self._args, **self._kwargs)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 950, in run_engine_core
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     raise e
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 937, in run_engine_core
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     engine_core = EngineCoreProc(*args, engine_index=dp_rank, **kwargs)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 691, in __init__
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     super().__init__(
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/core.py", line 105, in __init__
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self.model_executor = executor_class(vllm_config)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/abstract.py", line 101, in __init__
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self._init_executor()
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/executor/uniproc_executor.py", line 48, in _init_executor
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self.driver_worker.load_model()
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_worker.py", line 275, in load_model
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self.model_runner.load_model(eep_scale_up=eep_scale_up)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/worker/gpu_model_runner.py", line 4052, in load_model
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self.model = model_loader.load_model(
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m                  ^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/base_loader.py", line 58, in load_model
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self.load_weights(model, model_config)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 288, in load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     loaded_weights = model.load_weights(self.get_all_weights(model_config, model))
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 586, in load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     self.language_model.load_weights(llm_weights_generator())
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     return loader.load_weights(
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m            ^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/online_quantization.py", line 173, in patched_model_load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     return original_load_weights(auto_weight_loader, weights, mapper=mapper)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 342, in load_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     autoloaded_weights = set(self._load_module("", self.module, weights))
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 281, in _load_module
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     for child_prefix, child_weights in self._groupby_prefix(weights):
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 165, in _groupby_prefix
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     for prefix, group in itertools.groupby(weights_by_parts, key=lambda x: x[0][0]):
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 160, in <genexpr>
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     weights_by_parts = (
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m                        ^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/utils.py", line 338, in <genexpr>
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     weights = (
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m               ^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/mistral.py", line 292, in <genexpr>
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     return loader.load_weights(
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m                               ^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/models/pixtral.py", line 543, in llm_weights_generator
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     for name, w in weights:
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 260, in get_all_weights
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     yield from self._get_weights_iterator(primary_weights)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/default_loader.py", line 246, in <genexpr>
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     return ((source.prefix + name, tensor) for (name, tensor) in weights_iterator)
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/model_executor/model_loader/weight_utils.py", line 725, in safetensors_weights_iterator
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m     with safe_open(st_file, framework="pt") as f:
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0;36m(EngineCore_DP2 pid=3416777)[0;0m safetensors_rust.SafetensorError: Error while deserializing header: incomplete metadata, file not fully covered
+[rank0]:[W320 23:09:24.382450873 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W320 23:09:25.022564052 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+Traceback (most recent call last):
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/bin/vllm", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/main.py", line 73, in main
+    args.dispatch_function(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 108, in cmd
+    run_multi_api_server(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 248, in run_multi_api_server
+    with launch_core_engines(
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/utils.py", line 933, in launch_core_engines
+    wait_for_engine_startup(
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/engine/utils.py", line 992, in wait_for_engine_startup
+    raise RuntimeError(
+RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}

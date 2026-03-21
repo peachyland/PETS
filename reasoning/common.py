@@ -12,6 +12,9 @@ from typing import Any, Callable, Dict, List, Optional
 
 from openai import OpenAI
 from tqdm import tqdm
+import numpy as np
+import random
+import torch
 
 
 # ── Confidence extraction ────────────────────────────────────────────────
@@ -24,6 +27,16 @@ CONF_KEYS = (
     "bottom_0.5_sliding_2048_mean_conf",
 )
 
+def seed_everything(seed=42):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)  # 如果你有多个 GPU
+    
+    # 下面两行能保证卷积等操作的确定性，但会稍微降低运行速度
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
 
 def _sanitize_conf(d: Dict[str, Any]) -> Dict[str, Optional[float]]:
     out: Dict[str, Optional[float]] = {}
@@ -482,4 +495,5 @@ def add_common_args(ap):
     ap.add_argument("--max_workers", type=int, default=None, help="Max concurrent requests")
     ap.add_argument("--limit", type=int, default=None, help="Limit number of questions (for testing)")
     ap.add_argument("--eval-only", action="store_true", help="Evaluate existing results only")
+    ap.add_argument("--seed", type=int, default=42, help="Random seed")
     return ap

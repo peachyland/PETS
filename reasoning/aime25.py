@@ -13,9 +13,7 @@ in a \\boxed{{}} command.
 
 {problem}
 
-Remember to put your final answer in \\boxed{{}}.
-
-Reasoning:"""
+Remember to put your final answer in \\boxed{{}}."""
 
 
 def build_prompt(item):
@@ -66,6 +64,9 @@ def main():
     )
     ap.add_argument("--out", default="aime25_preds.jsonl", help="Output JSONL path")
     args = ap.parse_args()
+
+    common.seed_everything(args.seed)
+    print(f"seed set to {args.seed}")
 
     if args.eval_only:
         evaluate(args.out)

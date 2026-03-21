@@ -1,0 +1,708 @@
+INFO 03-18 14:11:56 [utils.py:325] 
+INFO 03-18 14:11:56 [utils.py:325]        █     █     █▄   ▄█
+INFO 03-18 14:11:56 [utils.py:325]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.15.1
+INFO 03-18 14:11:56 [utils.py:325]   █▄█▀ █     █     █     █  model   deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+INFO 03-18 14:11:56 [utils.py:325]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+INFO 03-18 14:11:56 [utils.py:325] 
+INFO 03-18 14:11:56 [utils.py:261] non-default args: {'model_tag': 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', 'api_server_count': 8, 'host': '0.0.0.0', 'model': 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', 'data_parallel_size': 4, 'gpu_memory_utilization': 0.97}
+INFO 03-18 14:11:56 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+INFO 03-18 14:11:56 [model.py:1561] Using max model len 131072
+INFO 03-18 14:11:58 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-18 14:11:58 [vllm.py:624] Asynchronous scheduling is enabled.
+INFO 03-18 14:11:58 [utils.py:851] Started DP Coordinator process (PID: 512084)
+INFO 03-18 14:11:58 [utils.py:218] Started 8 API server processes
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:09 [core.py:96] Initializing a V1 LLM engine (v0.15.1) with config: model='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', speculative_config=None, tokenizer='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=deepseek-ai/DeepSeek-R1-Distill-Qwen-7B, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': True}, 'local_cache_dir': None, 'static_all_moe_layers': []}
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:10 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:10 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:10 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:10 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:10 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:10 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:10 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:10 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:10 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:10 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:10 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:10 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:10 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:10 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:10 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:10 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:12 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:12 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:12 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:12 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:12 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:12 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:12 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:12 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:12 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:12 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:12 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:12 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:12 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:12 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:12 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:12 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(EngineCore_DP2 pid=512089)[0;0m INFO 03-18 14:13:12 [parallel_state.py:1212] world_size=1 rank=0 local_rank=2 distributed_init_method=tcp://128.30.204.11:45645 backend=nccl
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:12 [parallel_state.py:1212] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://128.30.204.11:36861 backend=nccl
+[0;36m(EngineCore_DP3 pid=512090)[0;0m INFO 03-18 14:13:12 [parallel_state.py:1212] world_size=1 rank=0 local_rank=3 distributed_init_method=tcp://128.30.204.11:44383 backend=nccl
+[0;36m(EngineCore_DP1 pid=512088)[0;0m INFO 03-18 14:13:12 [parallel_state.py:1212] world_size=1 rank=0 local_rank=1 distributed_init_method=tcp://128.30.204.11:36681 backend=nccl
+[0;36m(EngineCore_DP2 pid=512089)[0;0m INFO 03-18 14:13:12 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:12 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP1 pid=512088)[0;0m INFO 03-18 14:13:12 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP3 pid=512090)[0;0m INFO 03-18 14:13:12 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP3 pid=512090)[0;0m INFO 03-18 14:13:15 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:15 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP2 pid=512089)[0;0m INFO 03-18 14:13:15 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP1 pid=512088)[0;0m INFO 03-18 14:13:15 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:19 [cuda.py:364] Using FLASH_ATTN attention backend out of potential backends: ('FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION')
+[0;36m(EngineCore_DP2 pid=512089)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP3 pid=512090)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP1 pid=512088)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=512087)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP2 pid=512089)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.03it/s]
+[0;36m(EngineCore_DP3 pid=512090)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+[0;36m(EngineCore_DP1 pid=512088)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.06it/s]
+[0;36m(EngineCore_DP0 pid=512087)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.04it/s]
+[0;36m(EngineCore_DP2 pid=512089)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.22s/it]
+[0;36m(EngineCore_DP2 pid=512089)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.18s/it]
+[0;36m(EngineCore_DP2 pid=512089)[0;0m 
+[0;36m(EngineCore_DP3 pid=512090)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.18s/it]
+[0;36m(EngineCore_DP3 pid=512090)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
+[0;36m(EngineCore_DP3 pid=512090)[0;0m 
+[0;36m(EngineCore_DP1 pid=512088)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.18s/it]
+[0;36m(EngineCore_DP1 pid=512088)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.14s/it]
+[0;36m(EngineCore_DP1 pid=512088)[0;0m 
+[0;36m(EngineCore_DP0 pid=512087)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.21s/it]
+[0;36m(EngineCore_DP0 pid=512087)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.17s/it]
+[0;36m(EngineCore_DP0 pid=512087)[0;0m 
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:22 [default_loader.py:291] Loading weights took 2.51 seconds
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:23 [gpu_model_runner.py:4130] Model loading took 14.27 GiB memory and 6.535221 seconds
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:44 [backends.py:812] Using cache directory: /tmp/home/rjie/.cache/vllm/torch_compile_cache/9c253978e9/rank_0_0/backbone for vLLM's torch.compile
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:44 [backends.py:872] Dynamo bytecode transform time: 20.93 s
+[0;36m(EngineCore_DP2 pid=512089)[0;0m INFO 03-18 14:13:48 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 0.650 s
+[0;36m(EngineCore_DP3 pid=512090)[0;0m INFO 03-18 14:13:48 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 0.658 s
+[0;36m(EngineCore_DP1 pid=512088)[0;0m INFO 03-18 14:13:48 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 0.655 s
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:48 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 0.648 s
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:48 [monitor.py:34] torch.compile takes 21.58 s in total
+[0;36m(EngineCore_DP2 pid=512089)[0;0m 2026-03-18 14:13:48,825 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:48 [gpu_worker.py:356] Available KV cache memory: 115.59 GiB
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:48 [kv_cache_utils.py:1307] GPU KV cache size: 2,164,320 tokens
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:48 [kv_cache_utils.py:1312] Maximum concurrency for 131,072 tokens per request: 16.51x
+[0;36m(EngineCore_DP2 pid=512089)[0;0m 2026-03-18 14:13:48,854 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP0 pid=512087)[0;0m 2026-03-18 14:13:48,881 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP3 pid=512090)[0;0m 2026-03-18 14:13:48,885 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP1 pid=512088)[0;0m 2026-03-18 14:13:48,889 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP0 pid=512087)[0;0m 2026-03-18 14:13:48,898 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP3 pid=512090)[0;0m 2026-03-18 14:13:48,901 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP1 pid=512088)[0;0m 2026-03-18 14:13:48,905 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP2 pid=512089)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s][0;36m(EngineCore_DP0 pid=512087)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s][0;36m(EngineCore_DP1 pid=512088)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s][0;36m(EngineCore_DP3 pid=512090)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 21.51it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 21.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 21.27it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 21.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 23.51it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 23.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 23.15it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 23.13it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 22.30it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 22.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 22.50it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 22.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 22.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 23.07it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 22.86it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 23.07it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 23.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 23.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 23.48it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 23.28it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 23.36it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 23.50it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 23.41it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 23.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 24.05it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 24.10it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 24.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 23.83it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 23.41it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 23.43it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 23.38it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 23.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:01, 23.24it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:01, 23.24it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:01, 23.17it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:01, 23.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 22.98it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 22.98it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 22.90it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 22.76it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 22.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 22.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 22.43it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 22.35it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 22.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 22.72it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 22.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 22.31it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 22.13it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 22.13it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 21.95it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 21.79it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 22.00it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 22.02it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 21.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 21.74it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 22.49it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 22.51it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 21.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 21.87it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:02<00:00, 22.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:02<00:00, 22.42it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:02<00:00, 22.36it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:02<00:00, 22.31it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 23.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 22.94it/s]
+[0;36m(EngineCore_DP2 pid=512089)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 23.42it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 22.99it/s]
+[0;36m(EngineCore_DP0 pid=512087)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 23.32it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 22.77it/s]
+[0;36m(EngineCore_DP1 pid=512088)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 23.31it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 22.81it/s]
+[0;36m(EngineCore_DP3 pid=512090)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   8%|▊         | 4/51 [00:00<00:01, 34.81it/s]Capturing CUDA graphs (decode, FULL):   8%|▊         | 4/51 [00:00<00:01, 34.64it/s]Capturing CUDA graphs (decode, FULL):   8%|▊         | 4/51 [00:00<00:01, 34.27it/s]Capturing CUDA graphs (decode, FULL):   8%|▊         | 4/51 [00:00<00:01, 34.08it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 8/51 [00:00<00:01, 35.45it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 8/51 [00:00<00:01, 35.24it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 8/51 [00:00<00:01, 34.87it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 8/51 [00:00<00:01, 34.86it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 35.91it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 35.62it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 35.27it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 35.41it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 16/51 [00:00<00:00, 36.10it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 16/51 [00:00<00:00, 35.78it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 16/51 [00:00<00:00, 35.48it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 16/51 [00:00<00:00, 35.33it/s]Capturing CUDA graphs (decode, FULL):  39%|███▉      | 20/51 [00:00<00:00, 36.02it/s]Capturing CUDA graphs (decode, FULL):  39%|███▉      | 20/51 [00:00<00:00, 35.71it/s]Capturing CUDA graphs (decode, FULL):  39%|███▉      | 20/51 [00:00<00:00, 35.38it/s]Capturing CUDA graphs (decode, FULL):  39%|███▉      | 20/51 [00:00<00:00, 35.18it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 24/51 [00:00<00:00, 36.22it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 24/51 [00:00<00:00, 35.90it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 24/51 [00:00<00:00, 35.65it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 24/51 [00:00<00:00, 35.45it/s]Capturing CUDA graphs (decode, FULL):  55%|█████▍    | 28/51 [00:00<00:00, 36.46it/s]Capturing CUDA graphs (decode, FULL):  55%|█████▍    | 28/51 [00:00<00:00, 36.10it/s]Capturing CUDA graphs (decode, FULL):  55%|█████▍    | 28/51 [00:00<00:00, 35.97it/s]Capturing CUDA graphs (decode, FULL):  55%|█████▍    | 28/51 [00:00<00:00, 35.69it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 32/51 [00:00<00:00, 36.45it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 32/51 [00:00<00:00, 35.98it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 32/51 [00:00<00:00, 35.96it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 32/51 [00:00<00:00, 35.79it/s]Capturing CUDA graphs (decode, FULL):  71%|███████   | 36/51 [00:00<00:00, 36.22it/s]Capturing CUDA graphs (decode, FULL):  71%|███████   | 36/51 [00:01<00:00, 35.85it/s]Capturing CUDA graphs (decode, FULL):  71%|███████   | 36/51 [00:01<00:00, 35.87it/s]Capturing CUDA graphs (decode, FULL):  71%|███████   | 36/51 [00:01<00:00, 35.72it/s]Capturing CUDA graphs (decode, FULL):  78%|███████▊  | 40/51 [00:01<00:00, 36.34it/s]Capturing CUDA graphs (decode, FULL):  78%|███████▊  | 40/51 [00:01<00:00, 35.95it/s]Capturing CUDA graphs (decode, FULL):  78%|███████▊  | 40/51 [00:01<00:00, 35.89it/s]Capturing CUDA graphs (decode, FULL):  78%|███████▊  | 40/51 [00:01<00:00, 35.75it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▋ | 44/51 [00:01<00:00, 36.45it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▋ | 44/51 [00:01<00:00, 36.00it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▋ | 44/51 [00:01<00:00, 35.99it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▋ | 44/51 [00:01<00:00, 35.87it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 48/51 [00:01<00:00, 36.62it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 48/51 [00:01<00:00, 36.15it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 48/51 [00:01<00:00, 36.13it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 36.35it/s]
+Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 48/51 [00:01<00:00, 35.97it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 35.98it/s]
+Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 35.84it/s]
+Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 35.70it/s]
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:53 [gpu_model_runner.py:5063] Graph capturing finished in 4 secs, took -0.51 GiB
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:53 [core.py:272] init engine (profile, create kv cache, warmup model) took 30.00 seconds
+INFO 03-18 14:13:54 [coordinator.py:200] All engine subscriptions received by DP coordinator
+[0;36m(ApiServer_0 pid=512091)[0;0m WARNING 03-18 14:13:54 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(EngineCore_DP2 pid=512089)[0;0m INFO 03-18 14:13:54 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_4 pid=512095)[0;0m WARNING 03-18 14:13:54 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_2 pid=512093)[0;0m WARNING 03-18 14:13:54 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:13:54 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(EngineCore_DP3 pid=512090)[0;0m INFO 03-18 14:13:54 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(EngineCore_DP1 pid=512088)[0;0m INFO 03-18 14:13:54 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_5 pid=512096)[0;0m WARNING 03-18 14:13:54 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(EngineCore_DP0 pid=512087)[0;0m INFO 03-18 14:13:54 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_3 pid=512094)[0;0m WARNING 03-18 14:13:54 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_7 pid=512098)[0;0m WARNING 03-18 14:13:54 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:13:54 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+INFO 03-18 14:13:54 [utils.py:249] Waiting for API servers to complete ...
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:55 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:55 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:55 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:55 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:55 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:55 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:55 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:55 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_7 pid=512098)[0;0m WARNING 03-18 14:13:55 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_4 pid=512095)[0;0m WARNING 03-18 14:13:55 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_0 pid=512091)[0;0m WARNING 03-18 14:13:55 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_3 pid=512094)[0;0m WARNING 03-18 14:13:55 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_2 pid=512093)[0;0m WARNING 03-18 14:13:55 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:13:55 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_5 pid=512096)[0;0m WARNING 03-18 14:13:55 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:13:55 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:55 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:55 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:55 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:55 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:55 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:55 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:55 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:55 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [serving.py:212] Chat template warmup completed in 668.4ms
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [serving.py:212] Chat template warmup completed in 683.2ms
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [serving.py:212] Chat template warmup completed in 674.5ms
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [serving.py:212] Chat template warmup completed in 683.4ms
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [api_server.py:946] Starting vLLM API server 6 on http://0.0.0.0:8000
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [api_server.py:946] Starting vLLM API server 1 on http://0.0.0.0:8000
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [api_server.py:946] Starting vLLM API server 7 on http://0.0.0.0:8000
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [api_server.py:946] Starting vLLM API server 2 on http://0.0.0.0:8000
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [serving.py:212] Chat template warmup completed in 825.1ms
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [serving.py:212] Chat template warmup completed in 835.0ms
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [serving.py:212] Chat template warmup completed in 839.4ms
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [serving.py:212] Chat template warmup completed in 840.5ms
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [api_server.py:946] Starting vLLM API server 4 on http://0.0.0.0:8000
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [api_server.py:946] Starting vLLM API server 0 on http://0.0.0.0:8000
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /openapi.json, Methods: GET, HEAD
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs, Methods: GET, HEAD
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /redoc, Methods: GET, HEAD
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [api_server.py:946] Starting vLLM API server 5 on http://0.0.0.0:8000
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /openapi.json, Methods: GET, HEAD
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs, Methods: GET, HEAD
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /redoc, Methods: GET, HEAD
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [api_server.py:946] Starting vLLM API server 3 on http://0.0.0.0:8000
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /openapi.json, Methods: GET, HEAD
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs, Methods: GET, HEAD
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /redoc, Methods: GET, HEAD
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:13:56 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO:     Started server process [512097]
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO:     Started server process [512093]
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO:     Started server process [512095]
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO:     Started server process [512092]
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO:     Started server process [512098]
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO:     Started server process [512091]
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO:     Started server process [512096]
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO:     Started server process [512094]
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_7 pid=512098)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_1 pid=512092)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO:     127.0.0.1:48580 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO:     127.0.0.1:46182 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:48 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:48 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:48 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:48 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:49 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:49 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:49 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:49 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:50 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:50 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:50 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:50 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:51 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:51 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:51 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:51 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:52 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:52 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:52 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:53 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:53 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:53 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:53 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:54 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:54 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:54 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:54 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:54 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:55 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:55 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:55 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:56 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:56 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:56 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:57 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:57 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:58 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:58 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:58 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:58 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:59 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:59 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:59 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:59 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:59 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:17:59 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:00 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:00 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:00 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:00 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:01 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:01 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:01 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:01 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:01 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:02 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:02 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:02 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:02 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:02 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:03 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:03 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:03 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:18:03 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO:     127.0.0.1:46242 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:06 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:06 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:06 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:07 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:07 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+INFO 03-18 14:20:17 [utils.py:288] Received KeyboardInterrupt, shutting down API servers...
+Traceback (most recent call last):
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/bin/vllm", line 6, in <module>
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/main.py", line 73, in main
+[0;36m(ApiServer_2 pid=512093)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] port 8000 is used by process psutil.Process(pid=512092, name='VLLM::APIServer_1', status='running') launched with command:
+[0;36m(ApiServer_2 pid=512093)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] VLLM::APIServer_1                                                                                                                                                            
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO 03-18 14:20:17 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_5 pid=512096)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] port 8000 is used by process psutil.Process(pid=512095, name='VLLM::APIServer_4', status='running') launched with command:
+[0;36m(ApiServer_5 pid=512096)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] VLLM::APIServer_4                                                                                                                                                            
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO 03-18 14:20:17 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO:     Shutting down
+    args.dispatch_function(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 108, in cmd
+[0;36m(ApiServer_4 pid=512095)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] port 8000 is used by process psutil.Process(pid=512091, name='VLLM::APIServer_0', status='running') launched with command:
+[0;36m(ApiServer_4 pid=512095)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] VLLM::APIServer_0                                                                                                                                                            
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO 03-18 14:20:17 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_3 pid=512094)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] port 8000 is used by process psutil.Process(pid=512096, name='VLLM::APIServer_5', status='sleeping') launched with command:
+[0;36m(ApiServer_3 pid=512094)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] VLLM::APIServer_5                                                                                                                                                            
+[0;36m(ApiServer_0 pid=512091)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] port 8000 is used by process psutil.Process(pid=512098, name='VLLM::APIServer_7', status='running') launched with command:
+[0;36m(ApiServer_0 pid=512091)[0;0m WARNING 03-18 14:20:17 [launcher.py:104] VLLM::APIServer_7                                                                                                                                                            
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO 03-18 14:20:17 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO 03-18 14:20:17 [launcher.py:110] Shutting down FastAPI HTTP server.
+    run_multi_api_server(args)
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO:     Shutting down
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 282, in run_multi_api_server
+    wait_for_completion_or_failure(
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/utils.py", line 293, in wait_for_completion_or_failure
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+    logger.info("Terminating remaining processes ...")
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/logging/__init__.py", line 1489, in info
+    self._log(INFO, msg, args, **kwargs)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/logging/__init__.py", line 1632, in _log
+    record = self.makeRecord(self.name, level, fn, lno, msg, args,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/logging/__init__.py", line 1595, in makeRecord
+    def makeRecord(self, name, level, fn, lno, msg, args, exc_info,
+
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/openai/api_server.py", line 898, in signal_handler
+    raise KeyboardInterrupt("terminated")
+KeyboardInterrupt: terminated
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[rank0]:[W318 14:20:17.231891050 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W318 14:20:17.234230263 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W318 14:20:17.314894980 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W318 14:20:17.326298899 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO:     Waiting for application shutdown.
+[0;36m(ApiServer_2 pid=512093)[0;0m INFO:     Application shutdown complete.
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO:     Waiting for application shutdown.
+[0;36m(ApiServer_3 pid=512094)[0;0m INFO:     Application shutdown complete.
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:20:19 [launcher.py:104] port 8000 is used by process psutil.Process(pid=512098, name='VLLM::APIServer_7', status='running') launched with command:
+[0;36m(ApiServer_6 pid=512097)[0;0m WARNING 03-18 14:20:19 [launcher.py:104] VLLM::APIServer_7                                                                                                                                                            
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO 03-18 14:20:19 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO:     Waiting for application shutdown.
+[0;36m(ApiServer_5 pid=512096)[0;0m INFO:     Application shutdown complete.
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO:     Waiting for application shutdown.
+[0;36m(ApiServer_0 pid=512091)[0;0m INFO:     Application shutdown complete.
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO:     Waiting for application shutdown.
+[0;36m(ApiServer_6 pid=512097)[0;0m INFO:     Application shutdown complete.
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO:     Waiting for application shutdown.
+[0;36m(ApiServer_4 pid=512095)[0;0m INFO:     Application shutdown complete.
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=512092)[0;0m WARNING 03-18 14:20:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}

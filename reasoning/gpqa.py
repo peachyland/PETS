@@ -101,6 +101,9 @@ def main():
     if args.eval_only:
         evaluate(args.out)
         return
+    
+    common.seed_everything(args.seed)
+    print(f"seed set to {args.seed}")
 
     client, model = common.create_client(args.host, args.port, args.model_name)
 

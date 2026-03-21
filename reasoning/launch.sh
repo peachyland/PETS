@@ -102,6 +102,10 @@ while [[ $# -gt 0 ]]; do
       shift || { echo "[ERROR] --dp-size requires a value"; usage; exit 1; }
       DP_SIZE_VALUE="$1"
       ;;
+    --seed)
+      shift || { echo "[ERROR] --seed requires a value"; usage; exit 1; }
+      SEED="$1"
+      ;;
     --api-server-count)
       shift || { echo "[ERROR] --api-server-count requires a value"; usage; exit 1; }
       API_SERVER_COUNT_VALUE="$1"
@@ -285,6 +289,20 @@ export VLLM_CONF_TOPK="${VLLM_CONF_TOPK:-20}"
 export VLLM_CONF_MODE="${VLLM_CONF_MODE:-stats}"
 export VLLM_FLAT_LOGPROBS=1
 
+EXTRA_ARGS=()
+if [[ "$MODEL_DIR" == mistralai/Ministral-* ]]; then
+  EXTRA_ARGS+=(
+    --tokenizer_mode mistral
+    --config_format mistral
+    --load_format mistral
+    --reasoning-parser mistral
+    --enable-auto-tool-choice
+    --tool-call-parser mistral
+  )
+fi
+echo "[INFO] Extra args: ${EXTRA_ARGS[*]}"
+
+
 vllm serve "${MODEL_DIR}" \
   --api-server-count "${API_SERVER_COUNT_VALUE}" \
   --data-parallel-size "${DP_SIZE_VALUE}" \
@@ -292,6 +310,7 @@ vllm serve "${MODEL_DIR}" \
   --host 0.0.0.0 \
   --port "${API_PORT}" \
   --gpu-memory-utilization "${GPU_MEM_UTIL}" \
+  "${EXTRA_ARGS[@]}" \
   "${EXPERT_PARALLEL_ARGS[@]}" \
   > "${SERVER_LOG}" 2>&1 &
 SERVER_PID=$!
@@ -363,6 +382,7 @@ COMMON_ARGS=(
   --top_logprobs "${TOP_LOGPROBS_VALUE}"
   --max_workers "${MAX_WORKERS}"
   --out "${OUTPUT_FILE}"
+  --seed "${SEED}"
 )
 
 # Add data path if provided

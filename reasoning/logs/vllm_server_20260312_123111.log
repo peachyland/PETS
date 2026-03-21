@@ -1,0 +1,35 @@
+INFO 03-12 12:32:33 [utils.py:325] 
+INFO 03-12 12:32:33 [utils.py:325]        █     █     █▄   ▄█
+INFO 03-12 12:32:33 [utils.py:325]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.15.1
+INFO 03-12 12:32:33 [utils.py:325]   █▄█▀ █     █     █     █  model   /data/scratch/rjie/tts/PETS/reasoning
+INFO 03-12 12:32:33 [utils.py:325]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+INFO 03-12 12:32:33 [utils.py:325] 
+INFO 03-12 12:32:33 [utils.py:261] non-default args: {'model_tag': '/data/scratch/rjie/tts/PETS/reasoning', 'api_server_count': 6, 'host': '0.0.0.0', 'model': '/data/scratch/rjie/tts/PETS/reasoning', 'data_parallel_size': 3, 'gpu_memory_utilization': 0.97}
+Traceback (most recent call last):
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/bin/vllm", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/main.py", line 73, in main
+    args.dispatch_function(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 108, in cmd
+    run_multi_api_server(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 232, in run_multi_api_server
+    vllm_config = engine_args.create_engine_config(usage_context=usage_context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/engine/arg_utils.py", line 1374, in create_engine_config
+    model_config = self.create_model_config()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/engine/arg_utils.py", line 1228, in create_model_config
+    return ModelConfig(
+           ^^^^^^^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+    s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+  Value error, Invalid repository ID or local directory specified: '/data/scratch/rjie/tts/PETS/reasoning'.
+Please verify the following requirements:
+1. Provide a valid Hugging Face repository ID.
+2. Specify a local directory that contains a recognized configuration file.
+   - For Hugging Face models: ensure the presence of a 'config.json'.
+   - For Mistral models: ensure the presence of a 'params.json'.
+ [type=value_error, input_value=ArgsKwargs((), {'model': ...rocessor_plugin': None}), input_type=ArgsKwargs]
+    For further information visit https://errors.pydantic.dev/2.12/v/value_error

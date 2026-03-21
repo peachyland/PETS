@@ -13,9 +13,7 @@ in a \\boxed{{}} command.
 
 {problem}
 
-Remember to put your final answer in \\boxed{{}}.
-
-Reasoning:"""
+Remember to put your final answer in \\boxed{{}}."""
 
 
 def build_prompt(item):
