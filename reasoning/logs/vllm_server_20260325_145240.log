@@ -1,0 +1,698 @@
+INFO 03-25 14:54:01 [utils.py:325] 
+INFO 03-25 14:54:01 [utils.py:325]        █     █     █▄   ▄█
+INFO 03-25 14:54:01 [utils.py:325]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.15.1
+INFO 03-25 14:54:01 [utils.py:325]   █▄█▀ █     █     █     █  model   deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+INFO 03-25 14:54:01 [utils.py:325]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+INFO 03-25 14:54:01 [utils.py:325] 
+INFO 03-25 14:54:01 [utils.py:261] non-default args: {'model_tag': 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', 'api_server_count': 4, 'host': '0.0.0.0', 'model': 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', 'data_parallel_size': 2, 'gpu_memory_utilization': 0.97}
+INFO 03-25 14:54:01 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+INFO 03-25 14:54:01 [model.py:1561] Using max model len 131072
+INFO 03-25 14:54:04 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-25 14:54:04 [vllm.py:624] Asynchronous scheduling is enabled.
+INFO 03-25 14:54:04 [utils.py:851] Started DP Coordinator process (PID: 3773780)
+INFO 03-25 14:54:04 [utils.py:218] Started 4 API server processes
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:55:20 [core.py:96] Initializing a V1 LLM engine (v0.15.1) with config: model='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', speculative_config=None, tokenizer='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=deepseek-ai/DeepSeek-R1-Distill-Qwen-7B, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': True}, 'local_cache_dir': None, 'static_all_moe_layers': []}
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:55:21 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:55:21 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:55:21 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:55:21 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:55:21 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:55:21 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:55:21 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:55:21 [model.py:1561] Using max model len 131072
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m INFO 03-25 14:55:22 [parallel_state.py:1212] world_size=1 rank=0 local_rank=1 distributed_init_method=tcp://128.30.204.16:45231 backend=nccl
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:55:22 [parallel_state.py:1212] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://128.30.204.16:40653 backend=nccl
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m INFO 03-25 14:55:22 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:55:22 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:55:23 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:55:23 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:55:23 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:55:23 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:55:23 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:55:23 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:55:23 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:55:23 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m INFO 03-25 14:55:26 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:55:26 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:55:37 [cuda.py:364] Using FLASH_ATTN attention backend out of potential backends: ('FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION')
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:52<00:52, 52.77s/it]
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:52<00:52, 52.71s/it]
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:59<00:00, 61.14s/it]
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:59<00:00, 59.89s/it]
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m 
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:59<00:00, 61.12s/it]
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:59<00:00, 59.86s/it]
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m 
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:57:38 [default_loader.py:291] Loading weights took 120.16 seconds
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:57:38 [gpu_model_runner.py:4130] Model loading took 14.27 GiB memory and 131.314097 seconds
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:04 [backends.py:812] Using cache directory: /tmp/home/rjie/.cache/vllm/torch_compile_cache/9c253978e9/rank_0_0/backbone for vLLM's torch.compile
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:04 [backends.py:872] Dynamo bytecode transform time: 26.10 s
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m INFO 03-25 14:58:08 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 1.024 s
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:08 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 1.040 s
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:08 [monitor.py:34] torch.compile takes 27.14 s in total
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:09 [gpu_worker.py:356] Available KV cache memory: 115.59 GiB
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:09 [kv_cache_utils.py:1307] GPU KV cache size: 2,164,320 tokens
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:09 [kv_cache_utils.py:1312] Maximum concurrency for 131,072 tokens per request: 16.51x
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m 2026-03-25 14:58:09,822 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m 2026-03-25 14:58:09,828 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m 2026-03-25 14:58:09,911 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m 2026-03-25 14:58:09,911 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s][0;36m(EngineCore_DP1 pid=3773784)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 16.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:03, 15.97it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:02, 21.07it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:02, 20.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 22.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 21.99it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 23.90it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 23.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 24.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 24.07it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 24.49it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 24.06it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 25.24it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 24.76it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 24.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 24.14it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:00, 24.20it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:01, 23.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 23.94it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 23.32it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 23.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 22.32it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 23.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 22.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 22.97it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 22.00it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 23.33it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 22.48it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 23.79it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 22.72it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:02<00:00, 23.83it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:02<00:00, 22.95it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 22.41it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 23.32it/s]
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 23.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 23.00it/s]
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   2%|▏         | 1/51 [00:00<00:05,  9.22it/s]Capturing CUDA graphs (decode, FULL):   4%|▍         | 2/51 [00:00<00:02, 17.75it/s]Capturing CUDA graphs (decode, FULL):  10%|▉         | 5/51 [00:00<00:01, 25.98it/s]Capturing CUDA graphs (decode, FULL):  12%|█▏        | 6/51 [00:00<00:01, 29.04it/s]Capturing CUDA graphs (decode, FULL):  18%|█▊        | 9/51 [00:00<00:01, 31.85it/s]Capturing CUDA graphs (decode, FULL):  20%|█▉        | 10/51 [00:00<00:01, 32.79it/s]Capturing CUDA graphs (decode, FULL):  25%|██▌       | 13/51 [00:00<00:01, 34.32it/s]Capturing CUDA graphs (decode, FULL):  27%|██▋       | 14/51 [00:00<00:01, 34.62it/s]Capturing CUDA graphs (decode, FULL):  33%|███▎      | 17/51 [00:00<00:00, 36.11it/s]Capturing CUDA graphs (decode, FULL):  35%|███▌      | 18/51 [00:00<00:00, 35.35it/s]Capturing CUDA graphs (decode, FULL):  41%|████      | 21/51 [00:00<00:00, 37.01it/s]Capturing CUDA graphs (decode, FULL):  43%|████▎     | 22/51 [00:00<00:00, 36.33it/s]Capturing CUDA graphs (decode, FULL):  49%|████▉     | 25/51 [00:00<00:00, 37.81it/s]Capturing CUDA graphs (decode, FULL):  51%|█████     | 26/51 [00:00<00:00, 36.29it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 29/51 [00:00<00:00, 38.06it/s]Capturing CUDA graphs (decode, FULL):  59%|█████▉    | 30/51 [00:00<00:00, 37.15it/s]Capturing CUDA graphs (decode, FULL):  65%|██████▍   | 33/51 [00:00<00:00, 38.27it/s]Capturing CUDA graphs (decode, FULL):  67%|██████▋   | 34/51 [00:00<00:00, 37.51it/s]Capturing CUDA graphs (decode, FULL):  73%|███████▎  | 37/51 [00:01<00:00, 38.50it/s]Capturing CUDA graphs (decode, FULL):  75%|███████▍  | 38/51 [00:01<00:00, 37.79it/s]Capturing CUDA graphs (decode, FULL):  80%|████████  | 41/51 [00:01<00:00, 38.72it/s]Capturing CUDA graphs (decode, FULL):  82%|████████▏ | 42/51 [00:01<00:00, 38.12it/s]Capturing CUDA graphs (decode, FULL):  88%|████████▊ | 45/51 [00:01<00:00, 38.88it/s]Capturing CUDA graphs (decode, FULL):  90%|█████████ | 46/51 [00:01<00:00, 38.41it/s]Capturing CUDA graphs (decode, FULL):  96%|█████████▌| 49/51 [00:01<00:00, 39.11it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 36.65it/s]
+Capturing CUDA graphs (decode, FULL):  98%|█████████▊| 50/51 [00:01<00:00, 38.64it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 36.42it/s]
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:14 [gpu_model_runner.py:5063] Graph capturing finished in 4 secs, took -0.51 GiB
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:14 [core.py:272] init engine (profile, create kv cache, warmup model) took 35.31 seconds
+INFO 03-25 14:58:15 [coordinator.py:200] All engine subscriptions received by DP coordinator
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 14:58:15 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 14:58:15 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 14:58:15 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+INFO 03-25 14:58:15 [utils.py:249] Waiting for API servers to complete ...
+[0;36m(EngineCore_DP0 pid=3773783)[0;0m INFO 03-25 14:58:15 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 14:58:15 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(EngineCore_DP1 pid=3773784)[0;0m INFO 03-25 14:58:15 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:16 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:16 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:16 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:16 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 14:58:16 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 14:58:16 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 14:58:16 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 14:58:16 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:16 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:16 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:16 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:16 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [serving.py:212] Chat template warmup completed in 881.0ms
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [serving.py:212] Chat template warmup completed in 910.6ms
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [api_server.py:946] Starting vLLM API server 1 on http://0.0.0.0:8000
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /openapi.json, Methods: GET, HEAD
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /docs, Methods: GET, HEAD
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /redoc, Methods: GET, HEAD
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [serving.py:212] Chat template warmup completed in 1033.1ms
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [api_server.py:946] Starting vLLM API server 0 on http://0.0.0.0:8000
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [serving.py:212] Chat template warmup completed in 1046.5ms
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [api_server.py:946] Starting vLLM API server 2 on http://0.0.0.0:8000
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [api_server.py:946] Starting vLLM API server 3 on http://0.0.0.0:8000
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO 03-25 14:58:17 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO:     Started server process [3773788]
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO:     Started server process [3773787]
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO:     Started server process [3773785]
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     Started server process [3773786]
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     127.0.0.1:53664 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     127.0.0.1:34528 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     127.0.0.1:51706 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:48 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:48 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:48 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:49 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:49 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:49 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:50 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:50 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:51 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:51 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:52 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:52 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:53 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:53 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:54 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:54 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:54 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:55 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:55 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:56 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:56 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:57 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:57 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:58 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:58 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:58 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:59 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:02:59 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:00 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:00 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:01 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:01 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:01 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:02 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:02 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:03 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:03 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:03 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:04 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:04 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:04 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:05 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:05 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:06 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:06 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:06 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:07 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:07 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:07 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:03:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     127.0.0.1:51794 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:04:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     127.0.0.1:51640 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:32 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:32 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:33 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:33 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:33 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:34 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:34 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:07:35 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO:     127.0.0.1:51664 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:04 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:04 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:05 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:05 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:06 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:06 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:07 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:08 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:09 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:10 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:11 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:12 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:13 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:14 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:15 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:16 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:17 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:18 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:19 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:20 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:21 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:22 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:23 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:24 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:25 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:26 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:27 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:28 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:29 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:30 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:09:31 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:32 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:33 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO:     127.0.0.1:51730 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:33 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:34 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:34 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:35 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:36 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:36 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:36 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:37 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:37 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:39 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:39 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:39 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:40 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:40 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:41 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:41 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:41 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:42 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:42 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:43 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:43 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:43 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:44 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:44 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:44 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m WARNING 03-25 15:09:45 [protocol.py:53] The following fields were present in the request but ignored: {'confidence_summary'}
+[0;36m(ApiServer_3 pid=3773788)[0;0m INFO:     127.0.0.1:51694 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING:  Invalid HTTP request received.
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING:  Invalid HTTP request received.
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:13:08 [launcher.py:104] port 8000 is used by process psutil.Process(pid=3773786, name='VLLM::APIServer_1', status='running') launched with command:
+[0;36m(ApiServer_0 pid=3773785)[0;0m WARNING 03-25 15:13:08 [launcher.py:104] VLLM::APIServer_1                                                                                                                                                            
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO 03-25 15:13:08 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:13:08 [launcher.py:104] port 8000 is used by process psutil.Process(pid=3773785, name='VLLM::APIServer_0', status='sleeping') launched with command:
+[0;36m(ApiServer_2 pid=3773787)[0;0m WARNING 03-25 15:13:08 [launcher.py:104] VLLM::APIServer_0                                                                                                                                                            
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO 03-25 15:13:08 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:13:08 [launcher.py:104] port 8000 is used by process psutil.Process(pid=3773787, name='VLLM::APIServer_2', status='sleeping') launched with command:
+[0;36m(ApiServer_1 pid=3773786)[0;0m WARNING 03-25 15:13:08 [launcher.py:104] VLLM::APIServer_2                                                                                                                                                            
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO 03-25 15:13:08 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_0 pid=3773785)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[0;36m(ApiServer_2 pid=3773787)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[0;36m(ApiServer_1 pid=3773786)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[rank0]:[W325 15:13:08.599125295 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W325 15:13:09.881234860 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+ERROR 03-25 15:13:10 [utils.py:290] Exception occurred while running API servers: Process EngineCore_DP1 (PID: 3773784) died with exit code None
+ERROR 03-25 15:13:10 [utils.py:290] Traceback (most recent call last):
+ERROR 03-25 15:13:10 [utils.py:290]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/utils.py", line 277, in wait_for_completion_or_failure
+ERROR 03-25 15:13:10 [utils.py:290]     raise RuntimeError(
+ERROR 03-25 15:13:10 [utils.py:290] RuntimeError: Process EngineCore_DP1 (PID: 3773784) died with exit code None
+INFO 03-25 15:13:10 [utils.py:293] Terminating remaining processes ...
+Traceback (most recent call last):
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/bin/vllm", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/main.py", line 73, in main
+    args.dispatch_function(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 108, in cmd
+    run_multi_api_server(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 282, in run_multi_api_server
+    wait_for_completion_or_failure(
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/utils.py", line 277, in wait_for_completion_or_failure
+    raise RuntimeError(
+RuntimeError: Process EngineCore_DP1 (PID: 3773784) died with exit code None

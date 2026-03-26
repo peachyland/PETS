@@ -30,7 +30,8 @@ The `launch.sh` script automatically starts the vLLM server with confidence plug
 
 ```bash
 # Run AIME 2024 with 64 samples on 8 GPUs (TP=1, DP=8)
-./launch.sh --model-dir Qwen/Qwen3-8B --task aime24 --n 64 --dp-size 3 --out ./results/qwen3_aime24_64_1.jsonl
+# CUDA_VISIBLE_DEVICES='0,1' ./launch.sh --model-dir deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --task hmmt --n 64 --dp-size 2 --out ./results/deepseek_supp_hmmt.jsonl
+./launch.sh --model-dir Qwen/Qwen3-8B --task aime25 --n 64 --dp-size 2 --out ./results/qwen_supp_aime25.jsonl
 
 # Run with custom parallelism: TP=2, DP=4 on 8 GPUs
 ./launch.sh --model-dir /path/to/your/model --task aime24 --tp-size 2 --dp-size 4

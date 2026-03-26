@@ -213,3 +213,28 @@ Sat Mar 21 10:20:01 EDT 2026
 GPU_ID=2
 python aime24.py --model_name deepseek-ai/DeepSeek-R1-0528-Qwen3-8B --out ./results/aime24_results_2_44.jsonl --n 128 --max_new_tokens 30000 --group_size 10 --group_id 2 --temperature 1.0 --top_p 0.9 --seed 42 --batch_size 16
 ---------------------------------------------------------------
+Mon Mar 23 16:04:24 EDT 2026
+45
+GPU_ID=0,1
+./launch.sh --model-dir deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --task hmmt --n 64 --dp-size 2 --out ./results/deepseek_supp_hmmt.jsonl
+---------------------------------------------------------------
+Mon Mar 23 16:15:48 EDT 2026
+46
+GPU_ID=0,1
+./launch.sh --model-dir deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --task hmmt --n 64 --dp-size 2 --out ./results/deepseek_supp_hmmt.jsonl
+---------------------------------------------------------------
+Mon Mar 23 19:33:39 EDT 2026
+47
+GPU_ID=0,1
+./launch.sh --model-dir deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --task aime25 --n 64 --dp-size 2 --out ./results/deepseek_supp_aime25_2.jsonl
+---------------------------------------------------------------
+Mon Mar 23 19:58:14 EDT 2026
+48
+GPU_ID=0,1
+./launch.sh --model-dir deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --task aime25 --n 64 --dp-size 2 --out ./results/deepseek_supp_aime25_2.jsonl
+---------------------------------------------------------------
+Mon Mar 23 21:28:52 EDT 2026
+49
+GPU_ID=0,1
+./launch.sh --model-dir deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --task brumo --n 64 --dp-size 2 --out ./results/deepseek_supp_brumo.jsonl
+---------------------------------------------------------------

@@ -382,7 +382,6 @@ COMMON_ARGS=(
   --top_logprobs "${TOP_LOGPROBS_VALUE}"
   --max_workers "${MAX_WORKERS}"
   --out "${OUTPUT_FILE}"
-  --seed "${SEED}"
 )
 
 # Add data path if provided

@@ -71,6 +71,17 @@ def main():
     dataset = common.load_parquet_or_hf(args.data_path, split="train")
     if args.limit:
         dataset = dataset[:args.limit]
+
+    import copy
+    # 截取前16个元素
+    sub_list = dataset
+    # 使用列表推导式结合 deepcopy 重复6次
+    new_list = []
+    for _ in range(10):
+        new_list.extend(copy.deepcopy(sub_list))
+
+    dataset = new_list
+
     print(f"Loaded {len(dataset)} problems\n")
 
     def process(item):

@@ -1,0 +1,30 @@
+[INFO] Expert Parallel DISABLED.
+==============================================
+[INFO] PETS Benchmark Configuration
+==============================================
+[INFO] Model: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+[INFO] Model Name: DeepSeek-R1-Distill-Qwen-7B
+[INFO] Task: aime25
+[INFO] Tensor Parallel Size: 1
+[INFO] Data Parallel Size: 2
+[INFO] API Server Count: 4
+[INFO] Samples per question: 64
+[INFO] Temperature: 1.1
+[INFO] Top-P: 0.95
+[INFO] Top Logprobs: 20
+[INFO] API Port: 8000
+[INFO] Output File: ./results/deepseek_supp_aime25_2.jsonl
+==============================================
+[INFO] Launching vLLM API server with confidence plugin ...
+[INFO] Server log: /data/scratch/rjie/tts/PETS/reasoning/logs/vllm_server_20260323_195814.log
+[INFO] Extra args: 
+[INFO] Waiting for API server to become ready ...
+[INFO] vLLM is ready!
+[INFO] Running inference for task=aime25 with N=64 ...
+Using model: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+
+Loaded 80 problems
+
+
+Done - 51 ok, 29 failed (12196.8s, 0.01 q/s)
+Results: ./results/deepseek_supp_aime25_2.jsonl

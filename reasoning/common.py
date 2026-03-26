@@ -250,7 +250,7 @@ def create_client(host: str, port: int, model_name: Optional[str] = None):
         model = model_name
     else:
         model = model_name or available[0]
-    print(f"Using model: {model}\n")
+    print(f"Using model: {model} on PORT {port}\n")
     return client, model
 
 

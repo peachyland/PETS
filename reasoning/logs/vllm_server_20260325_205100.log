@@ -1,0 +1,436 @@
+INFO 03-25 20:52:14 [utils.py:325] 
+INFO 03-25 20:52:14 [utils.py:325]        █     █     █▄   ▄█
+INFO 03-25 20:52:14 [utils.py:325]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.15.1
+INFO 03-25 20:52:14 [utils.py:325]   █▄█▀ █     █     █     █  model   deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+INFO 03-25 20:52:14 [utils.py:325]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+INFO 03-25 20:52:14 [utils.py:325] 
+INFO 03-25 20:52:14 [utils.py:261] non-default args: {'model_tag': 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', 'api_server_count': 6, 'host': '0.0.0.0', 'port': 8004, 'model': 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', 'data_parallel_size': 3, 'gpu_memory_utilization': 0.97}
+INFO 03-25 20:52:14 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+INFO 03-25 20:52:14 [model.py:1561] Using max model len 131072
+INFO 03-25 20:52:16 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 03-25 20:52:16 [vllm.py:624] Asynchronous scheduling is enabled.
+INFO 03-25 20:52:16 [utils.py:851] Started DP Coordinator process (PID: 2628626)
+INFO 03-25 20:52:16 [utils.py:218] Started 6 API server processes
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:53:28 [core.py:96] Initializing a V1 LLM engine (v0.15.1) with config: model='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', speculative_config=None, tokenizer='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=deepseek-ai/DeepSeek-R1-Distill-Qwen-7B, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': True}, 'local_cache_dir': None, 'static_all_moe_layers': []}
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:53:29 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:53:29 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:53:29 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:53:29 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:53:29 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:53:29 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:53:29 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:53:29 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:53:29 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:53:29 [model.py:1561] Using max model len 131072
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:53:29 [model.py:541] Resolved architecture: Qwen2ForCausalLM
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:53:29 [model.py:1561] Using max model len 131072
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m INFO 03-25 20:53:30 [parallel_state.py:1212] world_size=1 rank=0 local_rank=1 distributed_init_method=tcp://128.30.204.12:40991 backend=nccl
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m INFO 03-25 20:53:30 [parallel_state.py:1212] world_size=1 rank=0 local_rank=2 distributed_init_method=tcp://128.30.204.12:60053 backend=nccl
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:53:30 [parallel_state.py:1212] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://128.30.204.12:34823 backend=nccl
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m INFO 03-25 20:53:30 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m INFO 03-25 20:53:30 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:53:30 [parallel_state.py:1423] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:53:31 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:53:31 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:53:31 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:53:31 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:53:31 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:53:31 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:53:31 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:53:31 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:53:31 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:53:31 [scheduler.py:226] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:53:31 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:53:31 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m INFO 03-25 20:53:33 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:53:33 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m INFO 03-25 20:53:33 [gpu_model_runner.py:4033] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:53:37 [cuda.py:364] Using FLASH_ATTN attention backend out of potential backends: ('FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION')
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:55<00:55, 55.34s/it]
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:55<00:55, 55.20s/it]
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:55<00:55, 55.39s/it]
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [02:00<00:00, 60.96s/it]
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [02:00<00:00, 60.12s/it]
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m 
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [02:00<00:00, 60.91s/it]
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [02:00<00:00, 60.99s/it]
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [02:00<00:00, 60.15s/it]
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [02:00<00:00, 60.05s/it]
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m 
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m 
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:55:38 [default_loader.py:291] Loading weights took 120.42 seconds
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:55:39 [gpu_model_runner.py:4130] Model loading took 14.27 GiB memory and 124.544410 seconds
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:01 [backends.py:812] Using cache directory: /tmp/home/rjie/.cache/vllm/torch_compile_cache/9c253978e9/rank_0_0/backbone for vLLM's torch.compile
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:01 [backends.py:872] Dynamo bytecode transform time: 22.53 s
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:05 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 0.714 s
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:05 [monitor.py:34] torch.compile takes 23.24 s in total
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m INFO 03-25 20:56:05 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 0.691 s
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m INFO 03-25 20:56:05 [backends.py:267] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 0.700 s
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:05 [gpu_worker.py:356] Available KV cache memory: 115.59 GiB
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:05 [kv_cache_utils.py:1307] GPU KV cache size: 2,164,320 tokens
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:05 [kv_cache_utils.py:1312] Maximum concurrency for 131,072 tokens per request: 16.51x
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m 2026-03-25 20:56:05,760 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m 2026-03-25 20:56:05,783 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m 2026-03-25 20:56:06,022 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m 2026-03-25 20:56:06,029 - INFO - autotuner.py:256 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m 2026-03-25 20:56:06,041 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m 2026-03-25 20:56:06,050 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process ends
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 22.63it/s][0;36m(EngineCore_DP1 pid=2628630)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s][0;36m(EngineCore_DP2 pid=2628631)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 24.39it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 23.04it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 22.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 24.47it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 24.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 24.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 25.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 24.72it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 24.46it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 25.14it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 25.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 25.20it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 24.63it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 25.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 25.42it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 25.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 25.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:00<00:01, 25.07it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:00<00:01, 24.59it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 25.99it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 25.31it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:00, 24.18it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:00<00:01, 24.86it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:00<00:01, 24.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 23.94it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:00, 24.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:01<00:00, 24.30it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 23.52it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 24.31it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:00, 24.01it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 23.77it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 23.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 23.51it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 23.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 24.05it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:01<00:00, 23.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 23.39it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 23.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 22.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 23.72it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 23.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:01<00:00, 23.19it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:01<00:00, 23.80it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 24.19it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 23.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 24.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 24.25it/s]
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:01<00:00, 24.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:01<00:00, 23.88it/s]Capturing CUDA graphs (decode, FULL):   8%|▊         | 4/51 [00:00<00:01, 36.00it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 25.27it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 24.66it/s]
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 24.85it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:02<00:00, 24.27it/s]
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 8/51 [00:00<00:01, 37.30it/s]Capturing CUDA graphs (decode, FULL):   8%|▊         | 4/51 [00:00<00:01, 36.75it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 37.95it/s]Capturing CUDA graphs (decode, FULL):   8%|▊         | 4/51 [00:00<00:01, 35.95it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 8/51 [00:00<00:01, 37.87it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 16/51 [00:00<00:00, 38.38it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 8/51 [00:00<00:01, 37.27it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 38.70it/s]Capturing CUDA graphs (decode, FULL):  39%|███▉      | 20/51 [00:00<00:00, 38.62it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 37.51it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 16/51 [00:00<00:00, 39.06it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 24/51 [00:00<00:00, 38.86it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 16/51 [00:00<00:00, 37.95it/s]Capturing CUDA graphs (decode, FULL):  39%|███▉      | 20/51 [00:00<00:00, 39.16it/s]Capturing CUDA graphs (decode, FULL):  39%|███▉      | 20/51 [00:00<00:00, 37.94it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 29/51 [00:00<00:00, 39.28it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 24/51 [00:00<00:00, 39.28it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 24/51 [00:00<00:00, 38.22it/s]Capturing CUDA graphs (decode, FULL):  65%|██████▍   | 33/51 [00:00<00:00, 39.06it/s]Capturing CUDA graphs (decode, FULL):  55%|█████▍    | 28/51 [00:00<00:00, 39.49it/s]Capturing CUDA graphs (decode, FULL):  55%|█████▍    | 28/51 [00:00<00:00, 38.58it/s]Capturing CUDA graphs (decode, FULL):  73%|███████▎  | 37/51 [00:00<00:00, 39.12it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 32/51 [00:00<00:00, 39.55it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 32/51 [00:00<00:00, 38.62it/s]Capturing CUDA graphs (decode, FULL):  80%|████████  | 41/51 [00:01<00:00, 38.99it/s]Capturing CUDA graphs (decode, FULL):  71%|███████   | 36/51 [00:00<00:00, 39.07it/s]Capturing CUDA graphs (decode, FULL):  71%|███████   | 36/51 [00:00<00:00, 38.46it/s]Capturing CUDA graphs (decode, FULL):  88%|████████▊ | 45/51 [00:01<00:00, 39.24it/s]Capturing CUDA graphs (decode, FULL):  78%|███████▊  | 40/51 [00:01<00:00, 39.22it/s]Capturing CUDA graphs (decode, FULL):  78%|███████▊  | 40/51 [00:01<00:00, 38.56it/s]Capturing CUDA graphs (decode, FULL):  98%|█████████▊| 50/51 [00:01<00:00, 39.51it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▋ | 44/51 [00:01<00:00, 39.24it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 38.89it/s]
+Capturing CUDA graphs (decode, FULL):  86%|████████▋ | 44/51 [00:01<00:00, 38.39it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 48/51 [00:01<00:00, 39.41it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 48/51 [00:01<00:00, 38.64it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 39.22it/s]
+Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 38.39it/s]
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:09 [gpu_model_runner.py:5063] Graph capturing finished in 4 secs, took -0.51 GiB
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:09 [core.py:272] init engine (profile, create kv cache, warmup model) took 30.81 seconds
+INFO 03-25 20:56:11 [coordinator.py:200] All engine subscriptions received by DP coordinator
+[0;36m(EngineCore_DP0 pid=2628629)[0;0m INFO 03-25 20:56:11 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_0 pid=2628632)[0;0m WARNING 03-25 20:56:11 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(EngineCore_DP2 pid=2628631)[0;0m INFO 03-25 20:56:11 [vllm.py:624] Asynchronous scheduling is enabled.
+[0;36m(ApiServer_1 pid=2628633)[0;0m WARNING 03-25 20:56:11 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_2 pid=2628634)[0;0m WARNING 03-25 20:56:11 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_3 pid=2628635)[0;0m WARNING 03-25 20:56:11 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_5 pid=2628637)[0;0m WARNING 03-25 20:56:11 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(ApiServer_4 pid=2628636)[0;0m WARNING 03-25 20:56:11 [loggers.py:1219] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+[0;36m(EngineCore_DP1 pid=2628630)[0;0m INFO 03-25 20:56:11 [vllm.py:624] Asynchronous scheduling is enabled.
+INFO 03-25 20:56:11 [utils.py:249] Waiting for API servers to complete ...
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:12 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:12 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:12 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:12 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:12 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:12 [api_server.py:665] Supported tasks: ['generate']
+[0;36m(ApiServer_3 pid=2628635)[0;0m WARNING 03-25 20:56:12 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_0 pid=2628632)[0;0m WARNING 03-25 20:56:12 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_5 pid=2628637)[0;0m WARNING 03-25 20:56:12 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_2 pid=2628634)[0;0m WARNING 03-25 20:56:12 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_4 pid=2628636)[0;0m WARNING 03-25 20:56:12 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_1 pid=2628633)[0;0m WARNING 03-25 20:56:12 [model.py:1371] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:12 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:12 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:12 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:12 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:12 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:12 [serving.py:177] Warming up chat template processing...
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [serving.py:212] Chat template warmup completed in 866.0ms
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [serving.py:212] Chat template warmup completed in 872.1ms
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [serving.py:212] Chat template warmup completed in 919.6ms
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [serving.py:212] Chat template warmup completed in 939.9ms
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [api_server.py:946] Starting vLLM API server 3 on http://0.0.0.0:8004
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [api_server.py:946] Starting vLLM API server 1 on http://0.0.0.0:8004
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:13 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [api_server.py:946] Starting vLLM API server 0 on http://0.0.0.0:8004
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:13 [serving.py:212] Chat template warmup completed in 1041.0ms
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:13 [hf.py:310] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [api_server.py:946] Starting vLLM API server 2 on http://0.0.0.0:8004
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:56:13 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:13 [serving.py:212] Chat template warmup completed in 1072.4ms
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [api_server.py:946] Starting vLLM API server 5 on http://0.0.0.0:8004
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /openapi.json, Methods: HEAD, GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /docs, Methods: HEAD, GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /redoc, Methods: HEAD, GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [api_server.py:946] Starting vLLM API server 4 on http://0.0.0.0:8004
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:38] Available routes are:
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /openapi.json, Methods: GET, HEAD
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /docs, Methods: GET, HEAD
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /redoc, Methods: GET, HEAD
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /scale_elastic_ep, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /is_scaling_elastic_ep, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /tokenize, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /detokenize, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /inference/v1/generate, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /pause, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /resume, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /is_paused, Methods: GET
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /metrics, Methods: GET
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /health, Methods: GET
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/chat/completions, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/chat/completions/render, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/responses, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/responses/{response_id}, Methods: GET
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/responses/{response_id}/cancel, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/audio/transcriptions, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/audio/translations, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/completions, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/completions/render, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/messages, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/models, Methods: GET
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /load, Methods: GET
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /version, Methods: GET
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /ping, Methods: GET
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /ping, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /invocations, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /classify, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/embeddings, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /score, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/score, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /rerank, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v1/rerank, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /v2/rerank, Methods: POST
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO 03-25 20:56:14 [launcher.py:46] Route: /pooling, Methods: POST
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO:     Started server process [2628637]
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO:     Started server process [2628633]
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO:     Started server process [2628635]
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO:     Started server process [2628634]
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO:     Started server process [2628632]
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO:     Started server process [2628636]
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO:     Waiting for application startup.
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_4 pid=2628636)[0;0m INFO:     Application startup complete.
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO:     127.0.0.1:57188 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO:     127.0.0.1:49488 - "GET /v1/models HTTP/1.1" 200 OK
+[0;36m(ApiServer_3 pid=2628635)[0;0m WARNING 03-25 20:59:40 [launcher.py:104] port 8004 is used by process psutil.Process(pid=2628636, name='VLLM::APIServer_4', status='running') launched with command:
+[0;36m(ApiServer_3 pid=2628635)[0;0m WARNING 03-25 20:59:40 [launcher.py:104] VLLM::APIServer_4                                                                                                                                                            
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO 03-25 20:59:40 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_0 pid=2628632)[0;0m WARNING 03-25 20:59:40 [launcher.py:104] port 8004 is used by process psutil.Process(pid=2628636, name='VLLM::APIServer_4', status='running') launched with command:
+[0;36m(ApiServer_0 pid=2628632)[0;0m WARNING 03-25 20:59:40 [launcher.py:104] VLLM::APIServer_4                                                                                                                                                            
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO 03-25 20:59:40 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_1 pid=2628633)[0;0m WARNING 03-25 20:59:40 [launcher.py:104] port 8004 is used by process psutil.Process(pid=2628636, name='VLLM::APIServer_4', status='running') launched with command:
+[0;36m(ApiServer_1 pid=2628633)[0;0m WARNING 03-25 20:59:40 [launcher.py:104] VLLM::APIServer_4                                                                                                                                                            
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO 03-25 20:59:40 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_2 pid=2628634)[0;0m WARNING 03-25 20:59:40 [launcher.py:104] port 8004 is used by process psutil.Process(pid=2628637, name='VLLM::APIServer_5', status='running') launched with command:
+[0;36m(ApiServer_2 pid=2628634)[0;0m WARNING 03-25 20:59:40 [launcher.py:104] VLLM::APIServer_5                                                                                                                                                            
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO 03-25 20:59:40 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_3 pid=2628635)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[0;36m(ApiServer_0 pid=2628632)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[0;36m(ApiServer_1 pid=2628633)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[0;36m(ApiServer_2 pid=2628634)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+[rank0]:[W325 20:59:40.827887021 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W325 20:59:40.834704922 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W325 20:59:40.835932986 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+ERROR 03-25 20:59:40 [utils.py:290] Exception occurred while running API servers: Process EngineCore_DP1 (PID: 2628630) died with exit code None
+ERROR 03-25 20:59:40 [utils.py:290] Traceback (most recent call last):
+ERROR 03-25 20:59:40 [utils.py:290]   File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/utils.py", line 277, in wait_for_completion_or_failure
+ERROR 03-25 20:59:40 [utils.py:290]     raise RuntimeError(
+ERROR 03-25 20:59:40 [utils.py:290] RuntimeError: Process EngineCore_DP1 (PID: 2628630) died with exit code None
+INFO 03-25 20:59:40 [utils.py:293] Terminating remaining processes ...
+[0;36m(ApiServer_5 pid=2628637)[0;0m WARNING 03-25 20:59:46 [launcher.py:104] port 8004 is used by process psutil.Process(pid=2628633, name='VLLM::APIServer_1', status='sleeping') launched with command:
+[0;36m(ApiServer_5 pid=2628637)[0;0m WARNING 03-25 20:59:46 [launcher.py:104] VLLM::APIServer_1                                                                                                                                                            
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO 03-25 20:59:46 [launcher.py:110] Shutting down FastAPI HTTP server.
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO:     Shutting down
+[0;36m(ApiServer_5 pid=2628637)[0;0m INFO:     Waiting for connections to close. (CTRL+C to force quit)
+Traceback (most recent call last):
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/bin/vllm", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/main.py", line 73, in main
+    args.dispatch_function(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 108, in cmd
+    run_multi_api_server(args)
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/entrypoints/cli/serve.py", line 282, in run_multi_api_server
+    wait_for_completion_or_failure(
+  File "/data/scratch/rjie/conda/miniconda3/envs/lcb/lib/python3.11/site-packages/vllm/v1/utils.py", line 277, in wait_for_completion_or_failure
+    raise RuntimeError(
+RuntimeError: Process EngineCore_DP1 (PID: 2628630) died with exit code None
