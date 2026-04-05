@@ -238,3 +238,18 @@ Mon Mar 23 21:28:52 EDT 2026
 GPU_ID=0,1
 ./launch.sh --model-dir deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --task brumo --n 64 --dp-size 2 --out ./results/deepseek_supp_brumo.jsonl
 ---------------------------------------------------------------
+Fri Mar 27 22:50:25 EDT 2026
+50
+GPU_ID=0,1
+./launch.sh --model-dir Qwen/Qwen3-8B --task brumo --n 64 --dp-size 2 --out ./results/qwen_new_brumo.jsonl
+---------------------------------------------------------------
+Tue Mar 31 12:24:51 EDT 2026
+51
+GPU_ID=0,1
+./launch.sh --model-dir Qwen/Qwen3-8B --task aime25 --n 64 --dp-size 2 --out ./results/qwen_new_aime25_supp.jsonl
+---------------------------------------------------------------
+Tue Mar 31 15:49:35 EDT 2026
+52
+GPU_ID=0,1
+./launch.sh --model-dir mistralai/Ministral-3-8B-Reasoning-2512 --task hmmt --n 64 --dp-size 2 --out ./results/mistral_new_hmmt_300.jsonl --port 8003
+---------------------------------------------------------------

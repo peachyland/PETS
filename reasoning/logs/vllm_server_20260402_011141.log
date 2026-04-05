@@ -1,0 +1,656 @@
+INFO 04-02 01:11:59 [utils.py:302] 
+INFO 04-02 01:11:59 [utils.py:302]        █     █     █▄   ▄█
+INFO 04-02 01:11:59 [utils.py:302]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.17.0
+INFO 04-02 01:11:59 [utils.py:302]   █▄█▀ █     █     █     █  model   mistralai/Ministral-3-8B-Reasoning-2512
+INFO 04-02 01:11:59 [utils.py:302]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+INFO 04-02 01:11:59 [utils.py:302] 
+INFO 04-02 01:11:59 [utils.py:238] non-default args: {'model_tag': 'mistralai/Ministral-3-8B-Reasoning-2512', 'api_server_count': 4, 'enable_auto_tool_choice': True, 'tool_call_parser': 'mistral', 'host': '0.0.0.0', 'port': 8001, 'model': 'mistralai/Ministral-3-8B-Reasoning-2512', 'tokenizer_mode': 'mistral', 'config_format': 'mistral', 'load_format': 'mistral', 'reasoning_parser': 'mistral', 'data_parallel_size': 2, 'gpu_memory_utilization': 0.97}
+WARNING 04-02 01:11:59 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+WARNING 04-02 01:11:59 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+WARNING 04-02 01:11:59 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+WARNING 04-02 01:11:59 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+WARNING 04-02 01:11:59 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+INFO 04-02 01:12:00 [model.py:531] Resolved architecture: PixtralForConditionalGeneration
+INFO 04-02 01:12:00 [model.py:1554] Using max model len 262144
+INFO 04-02 01:12:00 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 04-02 01:12:00 [vllm.py:747] Asynchronous scheduling is enabled.
+INFO 04-02 01:12:01 [utils.py:865] Started DP Coordinator process (PID: 3864954)
+INFO 04-02 01:12:01 [utils.py:217] Started 4 API server processes
+(EngineCore_DP1 pid=3864958) WARNING 04-02 01:12:21 [multiproc_executor.py:945] Reducing Torch parallelism from 16 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore_DP1 pid=3864958) INFO 04-02 01:12:21 [multiproc_executor.py:134] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.1.34.1 (local), world_size=1, local_world_size=1
+(EngineCore_DP0 pid=3864957) INFO 04-02 01:12:21 [core.py:101] Initializing a V1 LLM engine (v0.17.0) with config: model='mistralai/Ministral-3-8B-Reasoning-2512', speculative_config=None, tokenizer='mistralai/Ministral-3-8B-Reasoning-2512', skip_tokenizer_init=False, tokenizer_mode=mistral, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=262144, download_dir=None, load_format=mistral, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='mistral', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=mistralai/Ministral-3-8B-Reasoning-2512, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore_DP0 pid=3864957) WARNING 04-02 01:12:21 [multiproc_executor.py:945] Reducing Torch parallelism from 16 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore_DP0 pid=3864957) INFO 04-02 01:12:21 [multiproc_executor.py:134] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.1.34.1 (local), world_size=1, local_world_size=1
+(ApiServer_3 pid=3864962) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_3 pid=3864962) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_3 pid=3864962) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_3 pid=3864962) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_3 pid=3864962) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_2 pid=3864961) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_2 pid=3864961) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_2 pid=3864961) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_2 pid=3864961) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_2 pid=3864961) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_0 pid=3864959) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_0 pid=3864959) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_0 pid=3864959) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_0 pid=3864959) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_0 pid=3864959) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_1 pid=3864960) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_1 pid=3864960) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_1 pid=3864960) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_1 pid=3864960) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_1 pid=3864960) WARNING 04-02 01:12:21 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_3 pid=3864962) INFO 04-02 01:12:22 [model.py:531] Resolved architecture: PixtralForConditionalGeneration
+(ApiServer_3 pid=3864962) INFO 04-02 01:12:22 [model.py:1554] Using max model len 262144
+(ApiServer_0 pid=3864959) INFO 04-02 01:12:22 [model.py:531] Resolved architecture: PixtralForConditionalGeneration
+(ApiServer_0 pid=3864959) INFO 04-02 01:12:22 [model.py:1554] Using max model len 262144
+(ApiServer_1 pid=3864960) INFO 04-02 01:12:22 [model.py:531] Resolved architecture: PixtralForConditionalGeneration
+(ApiServer_1 pid=3864960) INFO 04-02 01:12:22 [model.py:1554] Using max model len 262144
+(ApiServer_2 pid=3864961) INFO 04-02 01:12:22 [model.py:531] Resolved architecture: PixtralForConditionalGeneration
+(ApiServer_2 pid=3864961) INFO 04-02 01:12:22 [model.py:1554] Using max model len 262144
+(ApiServer_0 pid=3864959) INFO 04-02 01:12:22 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_0 pid=3864959) INFO 04-02 01:12:22 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_2 pid=3864961) INFO 04-02 01:12:22 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_2 pid=3864961) INFO 04-02 01:12:22 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_1 pid=3864960) INFO 04-02 01:12:22 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_1 pid=3864960) INFO 04-02 01:12:22 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_3 pid=3864962) INFO 04-02 01:12:22 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_3 pid=3864962) INFO 04-02 01:12:22 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_0 pid=3864959) [2026-04-02 01:12:25] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(ApiServer_1 pid=3864960) [2026-04-02 01:12:25] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(ApiServer_2 pid=3864961) [2026-04-02 01:12:25] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(ApiServer_3 pid=3864962) [2026-04-02 01:12:25] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(ApiServer_2 pid=3864961) [2026-04-02 01:12:26] WARNING _cpp_lib.py:148: WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+(ApiServer_2 pid=3864961)     PyTorch 2.9.0+cu128 with CUDA 1208 (you have 2.10.0+cu128)
+(ApiServer_2 pid=3864961)     Python  3.10.19 (you have 3.11.14)
+(ApiServer_2 pid=3864961)   Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+(ApiServer_2 pid=3864961)   Memory-efficient attention, SwiGLU, sparse and more won't be available.
+(ApiServer_2 pid=3864961)   Set XFORMERS_MORE_DETAILS=1 for more details
+(ApiServer_1 pid=3864960) [2026-04-02 01:12:26] WARNING _cpp_lib.py:148: WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+(ApiServer_1 pid=3864960)     PyTorch 2.9.0+cu128 with CUDA 1208 (you have 2.10.0+cu128)
+(ApiServer_1 pid=3864960)     Python  3.10.19 (you have 3.11.14)
+(ApiServer_1 pid=3864960)   Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+(ApiServer_1 pid=3864960)   Memory-efficient attention, SwiGLU, sparse and more won't be available.
+(ApiServer_3 pid=3864962) [2026-04-02 01:12:26] WARNING _cpp_lib.py:148: WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+(ApiServer_1 pid=3864960)   Set XFORMERS_MORE_DETAILS=1 for more details
+(ApiServer_3 pid=3864962)     PyTorch 2.9.0+cu128 with CUDA 1208 (you have 2.10.0+cu128)
+(ApiServer_3 pid=3864962)     Python  3.10.19 (you have 3.11.14)
+(ApiServer_3 pid=3864962)   Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+(ApiServer_3 pid=3864962)   Memory-efficient attention, SwiGLU, sparse and more won't be available.
+(ApiServer_3 pid=3864962)   Set XFORMERS_MORE_DETAILS=1 for more details
+(ApiServer_0 pid=3864959) [2026-04-02 01:12:26] WARNING _cpp_lib.py:148: WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+(ApiServer_0 pid=3864959)     PyTorch 2.9.0+cu128 with CUDA 1208 (you have 2.10.0+cu128)
+(ApiServer_0 pid=3864959)     Python  3.10.19 (you have 3.11.14)
+(ApiServer_0 pid=3864959)   Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+(ApiServer_0 pid=3864959)   Memory-efficient attention, SwiGLU, sparse and more won't be available.
+(ApiServer_0 pid=3864959)   Set XFORMERS_MORE_DETAILS=1 for more details
+(ApiServer_0 pid=3864959) [2026-04-02 01:12:26] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(ApiServer_1 pid=3864960) [2026-04-02 01:12:26] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(ApiServer_3 pid=3864962) [2026-04-02 01:12:26] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(ApiServer_2 pid=3864961) [2026-04-02 01:12:26] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+[2026-04-02 01:12:33] WARNING _cpp_lib.py:148: WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+    PyTorch 2.9.0+cu128 with CUDA 1208 (you have 2.10.0+cu128)
+    Python  3.10.19 (you have 3.11.14)
+  Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+  Memory-efficient attention, SwiGLU, sparse and more won't be available.
+  Set XFORMERS_MORE_DETAILS=1 for more details
+[2026-04-02 01:12:33] WARNING _cpp_lib.py:148: WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+    PyTorch 2.9.0+cu128 with CUDA 1208 (you have 2.10.0+cu128)
+    Python  3.10.19 (you have 3.11.14)
+  Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+  Memory-efficient attention, SwiGLU, sparse and more won't be available.
+  Set XFORMERS_MORE_DETAILS=1 for more details
+[2026-04-02 01:12:33] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+[2026-04-02 01:12:33] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(Worker pid=3865406) INFO 04-02 01:12:35 [parallel_state.py:1393] world_size=1 rank=0 local_rank=1 distributed_init_method=tcp://127.0.0.1:46645 backend=nccl
+(Worker pid=3865403) INFO 04-02 01:12:35 [parallel_state.py:1393] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:48501 backend=nccl
+(Worker pid=3865403) INFO 04-02 01:12:35 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(Worker pid=3865406) INFO 04-02 01:12:35 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(Worker pid=3865403) INFO 04-02 01:12:37 [base.py:106] Offloader set to NoopOffloader
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:12:37 [gpu_model_runner.py:4255] Starting to load model mistralai/Ministral-3-8B-Reasoning-2512...
+(Worker pid=3865406) INFO 04-02 01:12:37 [base.py:106] Offloader set to NoopOffloader
+(Worker pid=3865406) (Worker pid=3865406) INFO 04-02 01:12:37 [gpu_model_runner.py:4255] Starting to load model mistralai/Ministral-3-8B-Reasoning-2512...
+(Worker pid=3865406) (Worker pid=3865406) INFO 04-02 01:12:37 [vllm.py:747] Asynchronous scheduling is enabled.
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:12:37 [vllm.py:747] Asynchronous scheduling is enabled.
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:12:37 [cuda.py:405] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:12:37 [flash_attn.py:587] Using FlashAttention version 3
+(Worker pid=3865403) (Worker pid=3865403) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(Worker pid=3865406) (Worker pid=3865406) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(Worker pid=3865403) (Worker pid=3865403) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(Worker pid=3865406) (Worker pid=3865406) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(Worker pid=3865406) (Worker pid=3865406) INFO 04-02 01:12:57 [weight_utils.py:561] Time spent downloading weights for mistralai/Ministral-3-8B-Reasoning-2512: 18.751762 seconds
+(Worker pid=3865406) (Worker pid=3865406) INFO 04-02 01:12:57 [weight_utils.py:601] No consolidated.safetensors.index.json found in remote.
+(Worker pid=3865406) (Worker pid=3865406) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:12:57 [weight_utils.py:601] No consolidated.safetensors.index.json found in remote.
+(Worker pid=3865403) (Worker pid=3865403) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(Worker pid=3865403) (Worker pid=3865403) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:10<00:00, 10.87s/it]
+(Worker pid=3865406) (Worker pid=3865406) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:10<00:00, 10.97s/it]
+(Worker pid=3865403) (Worker pid=3865403) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:10<00:00, 10.87s/it]
+(Worker pid=3865406) (Worker pid=3865406) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:10<00:00, 10.97s/it]
+(Worker pid=3865403) (Worker pid=3865403) 
+(Worker pid=3865406) (Worker pid=3865406) 
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:08 [default_loader.py:293] Loading weights took 11.28 seconds
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:09 [gpu_model_runner.py:4338] Model loading took 16.67 GiB memory and 31.468610 seconds
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:09 [gpu_model_runner.py:5254] Encoder cache will be initialized with a budget of 8192 tokens, and profiled with 2 image items of the maximum feature size.
+(Worker pid=3865403) (Worker pid=3865403) WARNING 04-02 01:13:09 [context.py:305] PixtralProcessorAdapter did not return `BatchFeature`. Make sure to match the behaviour of `ProcessorMixin` when implementing custom processors.
+(Worker pid=3865406) (Worker pid=3865406) INFO 04-02 01:13:10 [gpu_model_runner.py:5254] Encoder cache will be initialized with a budget of 8192 tokens, and profiled with 2 image items of the maximum feature size.
+(Worker pid=3865406) (Worker pid=3865406) WARNING 04-02 01:13:10 [context.py:305] PixtralProcessorAdapter did not return `BatchFeature`. Make sure to match the behaviour of `ProcessorMixin` when implementing custom processors.
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:11 [decorators.py:465] Directly load AOT compilation from path /home/rjie/.cache/vllm/torch_compile_cache/torch_aot_compile/2783b29698df8d1829c22b0cbe5aaa9a26102369703f30e343ebf92f064c5ad9/rank_0_0/model
+(Worker pid=3865406) (Worker pid=3865406) INFO 04-02 01:13:12 [decorators.py:465] Directly load AOT compilation from path /home/rjie/.cache/vllm/torch_compile_cache/torch_aot_compile/2783b29698df8d1829c22b0cbe5aaa9a26102369703f30e343ebf92f064c5ad9/rank_0_1/model
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:19 [backends.py:916] Using cache directory: /home/rjie/.cache/vllm/torch_compile_cache/6e07207bc9/rank_0_0/backbone for vLLM's torch.compile
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:19 [backends.py:976] Dynamo bytecode transform time: 9.40 s
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:21 [backends.py:266] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 1.159 s
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:21 [monitor.py:35] torch.compile takes 11.06 s in total
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:27 [gpu_worker.py:424] Available KV cache memory: 116.8 GiB
+(EngineCore_DP0 pid=3864957) INFO 04-02 01:13:27 [kv_cache_utils.py:1314] GPU KV cache size: 900,512 tokens
+(EngineCore_DP0 pid=3864957) INFO 04-02 01:13:27 [kv_cache_utils.py:1319] Maximum concurrency for 262,144 tokens per request: 3.44x
+(EngineCore_DP1 pid=3864958) INFO 04-02 01:13:27 [kv_cache_utils.py:1314] GPU KV cache size: 900,512 tokens
+(EngineCore_DP1 pid=3864958) INFO 04-02 01:13:27 [kv_cache_utils.py:1319] Maximum concurrency for 262,144 tokens per request: 3.44x
+(Worker pid=3865403) (Worker pid=3865403) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s](Worker pid=3865406) (Worker pid=3865406) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:02, 18.09it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:02, 18.32it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 25.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:01, 25.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 23.05it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:00<00:01, 22.92it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  25%|██▌       | 13/51 [00:00<00:01, 26.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  25%|██▌       | 13/51 [00:00<00:01, 26.41it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 17/51 [00:00<00:01, 28.68it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 17/51 [00:00<00:01, 28.51it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:00, 30.10it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:00<00:01, 29.99it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  49%|████▉     | 25/51 [00:00<00:00, 30.16it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  49%|████▉     | 25/51 [00:00<00:00, 30.18it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  57%|█████▋    | 29/51 [00:01<00:00, 31.26it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  57%|█████▋    | 29/51 [00:01<00:00, 31.12it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 31.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:01<00:00, 31.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  73%|███████▎  | 37/51 [00:01<00:00, 31.19it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  73%|███████▎  | 37/51 [00:01<00:00, 31.17it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  80%|████████  | 41/51 [00:01<00:00, 31.09it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  80%|████████  | 41/51 [00:01<00:00, 30.98it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 31.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:01<00:00, 30.90it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  96%|█████████▌| 49/51 [00:01<00:00, 31.58it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  96%|█████████▌| 49/51 [00:01<00:00, 31.42it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:01<00:00, 30.03it/s]
+(Worker pid=3865403) (Worker pid=3865403) Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:01<00:00, 30.01it/s]
+(Worker pid=3865406) (Worker pid=3865406) Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   6%|▌         | 3/51 [00:00<00:01, 26.38it/s]Capturing CUDA graphs (decode, FULL):   6%|▌         | 3/51 [00:00<00:01, 25.58it/s]Capturing CUDA graphs (decode, FULL):  14%|█▎        | 7/51 [00:00<00:01, 32.67it/s]Capturing CUDA graphs (decode, FULL):  14%|█▎        | 7/51 [00:00<00:01, 32.16it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 37.26it/s]Capturing CUDA graphs (decode, FULL):  24%|██▎       | 12/51 [00:00<00:01, 36.98it/s]Capturing CUDA graphs (decode, FULL):  33%|███▎      | 17/51 [00:00<00:00, 41.07it/s]Capturing CUDA graphs (decode, FULL):  33%|███▎      | 17/51 [00:00<00:00, 40.92it/s]Capturing CUDA graphs (decode, FULL):  45%|████▌     | 23/51 [00:00<00:00, 45.00it/s]Capturing CUDA graphs (decode, FULL):  45%|████▌     | 23/51 [00:00<00:00, 44.83it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 29/51 [00:00<00:00, 47.83it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 29/51 [00:00<00:00, 47.74it/s]Capturing CUDA graphs (decode, FULL):  69%|██████▊   | 35/51 [00:00<00:00, 49.72it/s]Capturing CUDA graphs (decode, FULL):  69%|██████▊   | 35/51 [00:00<00:00, 49.53it/s]Capturing CUDA graphs (decode, FULL):  80%|████████  | 41/51 [00:00<00:00, 51.13it/s]Capturing CUDA graphs (decode, FULL):  80%|████████  | 41/51 [00:00<00:00, 50.85it/s]Capturing CUDA graphs (decode, FULL):  92%|█████████▏| 47/51 [00:01<00:00, 52.10it/s]Capturing CUDA graphs (decode, FULL):  92%|█████████▏| 47/51 [00:01<00:00, 51.68it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 47.16it/s]
+Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:01<00:00, 47.10it/s]
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 01:13:30 [gpu_model_runner.py:5360] Graph capturing finished in 3 secs, took 0.66 GiB
+(EngineCore_DP0 pid=3864957) INFO 04-02 01:13:30 [core.py:282] init engine (profile, create kv cache, warmup model) took 21.48 seconds
+(EngineCore_DP1 pid=3864958) INFO 04-02 01:13:30 [core.py:282] init engine (profile, create kv cache, warmup model) took 20.87 seconds
+(EngineCore_DP0 pid=3864957) [2026-04-02 01:13:31] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(EngineCore_DP1 pid=3864958) [2026-04-02 01:13:31] INFO tekken.py:195: Non special vocabulary size is 130072 with 1000 special tokens.
+(EngineCore_DP1 pid=3864958) [2026-04-02 01:13:31] WARNING _cpp_lib.py:148: WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+(EngineCore_DP1 pid=3864958)     PyTorch 2.9.0+cu128 with CUDA 1208 (you have 2.10.0+cu128)
+(EngineCore_DP1 pid=3864958)     Python  3.10.19 (you have 3.11.14)
+(EngineCore_DP1 pid=3864958)   Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+(EngineCore_DP1 pid=3864958)   Memory-efficient attention, SwiGLU, sparse and more won't be available.
+(EngineCore_DP1 pid=3864958)   Set XFORMERS_MORE_DETAILS=1 for more details
+(EngineCore_DP0 pid=3864957) [2026-04-02 01:13:31] WARNING _cpp_lib.py:148: WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+(EngineCore_DP0 pid=3864957)     PyTorch 2.9.0+cu128 with CUDA 1208 (you have 2.10.0+cu128)
+(EngineCore_DP0 pid=3864957)     Python  3.10.19 (you have 3.11.14)
+(EngineCore_DP0 pid=3864957)   Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+(EngineCore_DP0 pid=3864957)   Memory-efficient attention, SwiGLU, sparse and more won't be available.
+(EngineCore_DP0 pid=3864957)   Set XFORMERS_MORE_DETAILS=1 for more details
+INFO 04-02 01:13:33 [coordinator.py:203] All engine subscriptions received by DP coordinator
+(EngineCore_DP0 pid=3864957) INFO 04-02 01:13:33 [vllm.py:747] Asynchronous scheduling is enabled.
+INFO 04-02 01:13:33 [utils.py:248] Waiting for API servers to complete ...
+(ApiServer_1 pid=3864960) WARNING 04-02 01:13:33 [loggers.py:1271] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(ApiServer_0 pid=3864959) WARNING 04-02 01:13:33 [loggers.py:1271] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(ApiServer_2 pid=3864961) WARNING 04-02 01:13:33 [loggers.py:1271] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(EngineCore_DP1 pid=3864958) INFO 04-02 01:13:33 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_3 pid=3864962) WARNING 04-02 01:13:33 [loggers.py:1271] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [api_server.py:495] Supported tasks: ['generate']
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [api_server.py:495] Supported tasks: ['generate']
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [api_server.py:495] Supported tasks: ['generate']
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [api_server.py:495] Supported tasks: ['generate']
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [serving.py:185] Warming up chat template processing...
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [serving.py:210] Chat template warmup completed in 1.2ms
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [serving.py:185] Warming up chat template processing...
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [serving.py:185] Warming up chat template processing...
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [serving.py:210] Chat template warmup completed in 1.5ms
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [serving.py:210] Chat template warmup completed in 1.2ms
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [serving.py:185] Warming up chat template processing...
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [serving.py:210] Chat template warmup completed in 1.2ms
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [parser_manager.py:202] "auto" tool choice has been enabled.
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [api_server.py:500] Starting vLLM API server 0 on http://0.0.0.0:8001
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:38] Available routes are:
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /openapi.json, Methods: GET, HEAD
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /docs, Methods: GET, HEAD
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /redoc, Methods: GET, HEAD
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /tokenize, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /detokenize, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /load, Methods: GET
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /version, Methods: GET
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /health, Methods: GET
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /metrics, Methods: GET
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/models, Methods: GET
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /ping, Methods: GET
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /ping, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /invocations, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/completions, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/messages, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_0 pid=3864959) INFO 04-02 01:13:33 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [api_server.py:500] Starting vLLM API server 1 on http://0.0.0.0:8001
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:38] Available routes are:
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /openapi.json, Methods: HEAD, GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /docs, Methods: HEAD, GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /redoc, Methods: HEAD, GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /tokenize, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /detokenize, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /load, Methods: GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /version, Methods: GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /health, Methods: GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /metrics, Methods: GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/models, Methods: GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /ping, Methods: GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /ping, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /invocations, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/completions, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/messages, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_1 pid=3864960) INFO 04-02 01:13:33 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [api_server.py:500] Starting vLLM API server 3 on http://0.0.0.0:8001
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:38] Available routes are:
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /openapi.json, Methods: GET, HEAD
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /docs, Methods: GET, HEAD
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /redoc, Methods: GET, HEAD
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /tokenize, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /detokenize, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /load, Methods: GET
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /version, Methods: GET
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /health, Methods: GET
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /metrics, Methods: GET
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/models, Methods: GET
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /ping, Methods: GET
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /ping, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /invocations, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/completions, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/messages, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_3 pid=3864962) INFO 04-02 01:13:33 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [api_server.py:500] Starting vLLM API server 2 on http://0.0.0.0:8001
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:38] Available routes are:
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /openapi.json, Methods: HEAD, GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /docs, Methods: HEAD, GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /redoc, Methods: HEAD, GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /tokenize, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /detokenize, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /load, Methods: GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /version, Methods: GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /health, Methods: GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /metrics, Methods: GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/models, Methods: GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /ping, Methods: GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /ping, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /invocations, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/completions, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/messages, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_2 pid=3864961) INFO 04-02 01:13:33 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_1 pid=3864960) INFO:     Started server process [3864960]
+(ApiServer_1 pid=3864960) INFO:     Waiting for application startup.
+(ApiServer_3 pid=3864962) INFO:     Started server process [3864962]
+(ApiServer_3 pid=3864962) INFO:     Waiting for application startup.
+(ApiServer_0 pid=3864959) INFO:     Started server process [3864959]
+(ApiServer_0 pid=3864959) INFO:     Waiting for application startup.
+(ApiServer_2 pid=3864961) INFO:     Started server process [3864961]
+(ApiServer_2 pid=3864961) INFO:     Waiting for application startup.
+(ApiServer_3 pid=3864962) INFO:     Application startup complete.
+(ApiServer_2 pid=3864961) INFO:     Application startup complete.
+(ApiServer_1 pid=3864960) INFO:     Application startup complete.
+(ApiServer_0 pid=3864959) INFO:     Application startup complete.
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:54886 - "GET /v1/models HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:54890 - "GET /v1/models HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35446 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:54890 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35478 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35366 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35448 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35388 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:46144 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35402 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35418 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35420 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:52252 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35378 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35484 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:51252 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35430 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35498 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35464 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:50472 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35440 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:50470 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:53030 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:58088 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:58096 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:58090 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:58084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:58418 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:50830 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:42000 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:50828 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:50058 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:43050 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:44332 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:52212 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:33330 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:58768 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:51906 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:48820 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:34832 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:43802 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:51252 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:38966 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:57198 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:33464 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:50762 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:43422 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:40140 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:59366 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:58502 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:38302 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:33774 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:33786 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:38286 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:37072 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:37056 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:37084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:56100 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:53852 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:53860 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:56124 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:43998 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:56112 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:50418 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:40874 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:43950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:40876 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:46198 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:59126 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:53918 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35362 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35422 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35698 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:53916 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35374 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35706 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:52346 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39460 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:34982 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:53692 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:34996 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:58800 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39462 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:43966 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:47854 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:34818 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:47864 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:35032 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:35048 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:43194 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:43186 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:43184 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:41260 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:58452 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:41266 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:52114 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35110 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:39554 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:46192 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:51650 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:51646 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:44262 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:34320 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:47240 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:47244 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:35034 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:47226 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35056 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:35020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:50548 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35050 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:53062 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:50536 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:53068 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:50082 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:58502 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:32872 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:43980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:51900 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:58484 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:58492 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:32878 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:35734 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:51894 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:49280 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:49264 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:42116 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:42122 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:48820 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:55378 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:47950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:47954 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:48534 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:58504 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:48544 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:44012 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:55364 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39348 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39344 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:39272 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:46736 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:51838 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:40296 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:45470 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:43086 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35442 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:43748 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:36460 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:36464 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:58256 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:37100 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:58258 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:58832 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:58252 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:41954 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39472 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:49564 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:48070 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:39090 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:45954 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:45952 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:43046 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:43032 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:46670 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:35502 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:39578 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35518 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35492 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:36168 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:36058 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:39590 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:60146 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:52934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:54614 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:60134 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:54624 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:37312 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35126 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:37328 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:60660 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:60664 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39896 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:54322 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:56632 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:42462 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:43096 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:43110 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:34460 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:39884 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:57774 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:53050 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:34458 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:57692 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:49188 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:54434 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:54418 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39122 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:42228 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:41962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:36350 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39130 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:36342 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:36366 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:42244 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:46034 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:56228 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:34560 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:56240 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:57052 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:33696 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:33118 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:44042 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:32952 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:33132 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:32950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:57796 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:42124 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:54170 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:54174 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:44026 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:35906 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:44018 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:36294 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:55226 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:54180 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:58060 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:39650 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:37520 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:46136 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:52190 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:47312 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:46140 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:52192 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:36658 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:39938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:40222 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:42718 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:34012 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:55970 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:41618 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:41608 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:45088 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:38944 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:45068 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:45080 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:55290 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:33998 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:48964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:58318 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:36486 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:58304 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:48954 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:39618 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:58328 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:50694 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:60128 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:39684 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:50684 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:60138 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:36340 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:51388 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:50582 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:36350 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:46124 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:36410 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:55304 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:49224 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:55426 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:55440 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:49030 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:37800 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:38746 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:54560 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:49070 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:33444 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:41870 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:51700 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:34456 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:49046 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:40350 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:33672 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:47572 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:47562 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:45344 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:58706 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:45360 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:35818 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:53186 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:44930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:59432 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:59438 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:39752 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:49280 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:49108 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:33920 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=3864961) INFO:     127.0.0.1:45314 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:45298 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:54026 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:35624 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=3864959) INFO:     127.0.0.1:51698 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=3864962) INFO:     127.0.0.1:43914 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=3864960) INFO:     127.0.0.1:42112 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 04-02 08:12:17 [utils.py:287] Received KeyboardInterrupt, shutting down API servers...
+INFO 04-02 08:12:17 [utils.py:292] Terminating remaining processes ...
+(ApiServer_3 pid=3864962) INFO 04-02 08:12:18 [launcher.py:122] Shutting down FastAPI HTTP server.
+(ApiServer_1 pid=3864960) WARNING 04-02 08:12:18 [launcher.py:116] port 8001 is used by process psutil.Process(pid=3864962, name='VLLM::APIServer_3', status='running') launched with command:
+(ApiServer_1 pid=3864960) WARNING 04-02 08:12:18 [launcher.py:116] VLLM::APIServer_3                                                                                                                                              
+(ApiServer_1 pid=3864960) INFO 04-02 08:12:18 [launcher.py:122] Shutting down FastAPI HTTP server.
+(ApiServer_2 pid=3864961) WARNING 04-02 08:12:18 [launcher.py:116] port 8001 is used by process psutil.Process(pid=3864962, name='VLLM::APIServer_3', status='running') launched with command:
+(ApiServer_2 pid=3864961) WARNING 04-02 08:12:18 [launcher.py:116] VLLM::APIServer_3                                                                                                                                              
+(ApiServer_2 pid=3864961) INFO 04-02 08:12:18 [launcher.py:122] Shutting down FastAPI HTTP server.
+(ApiServer_0 pid=3864959) WARNING 04-02 08:12:18 [launcher.py:116] port 8001 is used by process psutil.Process(pid=3864962, name='VLLM::APIServer_3', status='running') launched with command:
+(ApiServer_0 pid=3864959) WARNING 04-02 08:12:18 [launcher.py:116] VLLM::APIServer_3                                                                                                                                              
+(ApiServer_0 pid=3864959) INFO 04-02 08:12:18 [launcher.py:122] Shutting down FastAPI HTTP server.
+(ApiServer_1 pid=3864960) INFO:     Shutting down
+(ApiServer_3 pid=3864962) INFO:     Shutting down
+(ApiServer_2 pid=3864961) INFO:     Shutting down
+(ApiServer_0 pid=3864959) INFO:     Shutting down
+(ApiServer_1 pid=3864960) INFO:     Waiting for application shutdown.
+(ApiServer_2 pid=3864961) INFO:     Waiting for application shutdown.
+(ApiServer_3 pid=3864962) INFO:     Waiting for application shutdown.
+(ApiServer_3 pid=3864962) INFO:     Application shutdown complete.
+(ApiServer_2 pid=3864961) INFO:     Application shutdown complete.
+(ApiServer_1 pid=3864960) INFO:     Application shutdown complete.
+(ApiServer_0 pid=3864959) INFO:     Waiting for application shutdown.
+(ApiServer_0 pid=3864959) INFO:     Application shutdown complete.
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 08:12:19 [multiproc_executor.py:749] Parent process exited, terminating worker
+(Worker pid=3865406) (Worker pid=3865406) INFO 04-02 08:12:19 [multiproc_executor.py:749] Parent process exited, terminating worker
+(Worker pid=3865403) (Worker pid=3865403) INFO 04-02 08:12:19 [multiproc_executor.py:802] WorkerProc shutting down.
+(Worker pid=3865406) (Worker pid=3865406) INFO 04-02 08:12:19 [multiproc_executor.py:802] WorkerProc shutting down.

@@ -1,0 +1,241 @@
+INFO 04-04 23:24:01 [utils.py:302] 
+INFO 04-04 23:24:01 [utils.py:302]        █     █     █▄   ▄█
+INFO 04-04 23:24:01 [utils.py:302]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.17.0
+INFO 04-04 23:24:01 [utils.py:302]   █▄█▀ █     █     █     █  model   nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1
+INFO 04-04 23:24:01 [utils.py:302]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+INFO 04-04 23:24:01 [utils.py:302] 
+INFO 04-04 23:24:01 [utils.py:238] non-default args: {'model_tag': 'nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1', 'api_server_count': 4, 'host': '0.0.0.0', 'model': 'nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1', 'data_parallel_size': 2, 'gpu_memory_utilization': 0.97}
+WARNING 04-04 23:24:01 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+WARNING 04-04 23:24:01 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+WARNING 04-04 23:24:01 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+WARNING 04-04 23:24:01 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+WARNING 04-04 23:24:01 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+INFO 04-04 23:24:01 [model.py:531] Resolved architecture: LlamaForCausalLM
+INFO 04-04 23:24:01 [model.py:1554] Using max model len 131072
+INFO 04-04 23:24:01 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 04-04 23:24:01 [vllm.py:747] Asynchronous scheduling is enabled.
+INFO 04-04 23:24:01 [utils.py:865] Started DP Coordinator process (PID: 3896049)
+INFO 04-04 23:24:01 [utils.py:217] Started 4 API server processes
+(EngineCore_DP0 pid=3896054) INFO 04-04 23:24:23 [core.py:101] Initializing a V1 LLM engine (v0.17.0) with config: model='nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1', speculative_config=None, tokenizer='nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=nvidia/Llama-3.1-Nemotron-Nano-4B-v1.1, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore_DP0 pid=3896054) WARNING 04-04 23:24:23 [multiproc_executor.py:945] Reducing Torch parallelism from 32 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore_DP0 pid=3896054) INFO 04-04 23:24:23 [multiproc_executor.py:134] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.1.33.1 (local), world_size=1, local_world_size=1
+(EngineCore_DP1 pid=3896057) WARNING 04-04 23:24:23 [multiproc_executor.py:945] Reducing Torch parallelism from 32 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore_DP1 pid=3896057) INFO 04-04 23:24:23 [multiproc_executor.py:134] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.1.33.1 (local), world_size=1, local_world_size=1
+(ApiServer_1 pid=3896059) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_1 pid=3896059) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_1 pid=3896059) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_1 pid=3896059) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_1 pid=3896059) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_3 pid=3896061) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_3 pid=3896061) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_3 pid=3896061) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_3 pid=3896061) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_3 pid=3896061) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_0 pid=3896058) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_0 pid=3896058) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_0 pid=3896058) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_0 pid=3896058) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_0 pid=3896058) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_2 pid=3896060) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_2 pid=3896060) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_2 pid=3896060) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_2 pid=3896060) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_2 pid=3896060) WARNING 04-04 23:24:24 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_0 pid=3896058) INFO 04-04 23:24:24 [model.py:531] Resolved architecture: LlamaForCausalLM
+(ApiServer_0 pid=3896058) INFO 04-04 23:24:24 [model.py:1554] Using max model len 131072
+(ApiServer_3 pid=3896061) INFO 04-04 23:24:24 [model.py:531] Resolved architecture: LlamaForCausalLM
+(ApiServer_3 pid=3896061) INFO 04-04 23:24:24 [model.py:1554] Using max model len 131072
+(ApiServer_2 pid=3896060) INFO 04-04 23:24:24 [model.py:531] Resolved architecture: LlamaForCausalLM
+(ApiServer_2 pid=3896060) INFO 04-04 23:24:24 [model.py:1554] Using max model len 131072
+(ApiServer_1 pid=3896059) INFO 04-04 23:24:24 [model.py:531] Resolved architecture: LlamaForCausalLM
+(ApiServer_1 pid=3896059) INFO 04-04 23:24:24 [model.py:1554] Using max model len 131072
+(ApiServer_1 pid=3896059) INFO 04-04 23:24:25 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_1 pid=3896059) INFO 04-04 23:24:25 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_3 pid=3896061) INFO 04-04 23:24:25 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_3 pid=3896061) INFO 04-04 23:24:25 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_0 pid=3896058) INFO 04-04 23:24:25 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_0 pid=3896058) INFO 04-04 23:24:25 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_2 pid=3896060) INFO 04-04 23:24:25 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_2 pid=3896060) INFO 04-04 23:24:25 [vllm.py:747] Asynchronous scheduling is enabled.
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/spawn.py", line 122, in spawn_main
+INFO 04-04 23:24:34 [utils.py:248] Waiting for API servers to complete ...
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/rjie/miniconda3/envs/lcb/bin/vllm", line 3, in <module>
+    from vllm.entrypoints.cli.main import main
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/entrypoints/cli/__init__.py", line 4, in <module>
+    from vllm.entrypoints.cli.benchmark.mm_processor import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/entrypoints/cli/benchmark/mm_processor.py", line 5, in <module>
+    from vllm.benchmarks.mm_processor import add_cli_args, main
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/benchmarks/mm_processor.py", line 26, in <module>
+    from vllm.benchmarks.datasets import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/benchmarks/datasets.py", line 39, in <module>
+    exitcode = _main(fd, parent_sentinel)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/spawn.py", line 131, in _main
+    prepare(preparation_data)
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/spawn.py", line 246, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/spawn.py", line 297, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/rjie/miniconda3/envs/lcb/bin/vllm", line 3, in <module>
+    from vllm.lora.utils import get_adapter_absolute_path
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/lora/utils.py", line 17, in <module>
+    from vllm.entrypoints.cli.main import main
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/entrypoints/cli/__init__.py", line 4, in <module>
+    from vllm.entrypoints.cli.benchmark.mm_processor import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/entrypoints/cli/benchmark/mm_processor.py", line 5, in <module>
+    from vllm.benchmarks.mm_processor import add_cli_args, main
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/benchmarks/mm_processor.py", line 26, in <module>
+    from vllm.lora.layers import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/lora/layers/__init__.py", line 4, in <module>
+    from vllm.benchmarks.datasets import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/benchmarks/datasets.py", line 39, in <module>
+    from vllm.lora.utils import get_adapter_absolute_path
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/lora/utils.py", line 17, in <module>
+    from vllm.lora.layers import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/lora/layers/__init__.py", line 4, in <module>
+    from vllm.lora.layers.column_parallel_linear import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/lora/layers/column_parallel_linear.py", line 12, in <module>
+    from vllm.lora.layers.column_parallel_linear import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/lora/layers/column_parallel_linear.py", line 12, in <module>
+    from vllm.model_executor.layers.linear import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/model_executor/layers/linear.py", line 28, in <module>
+    from vllm.model_executor.layers.linear import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/model_executor/layers/linear.py", line 28, in <module>
+    from vllm.model_executor.layers.utils import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/model_executor/layers/utils.py", line 11, in <module>
+    from vllm.model_executor.layers.utils import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/model_executor/layers/utils.py", line 11, in <module>
+    from vllm._aiter_ops import rocm_aiter_ops
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/_aiter_ops.py", line 12, in <module>
+    from vllm._aiter_ops import rocm_aiter_ops
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/_aiter_ops.py", line 12, in <module>
+    from vllm.v1.attention.ops.rocm_aiter_mla_sparse import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/v1/attention/ops/rocm_aiter_mla_sparse.py", line 11, in <module>
+    from vllm.v1.attention.ops.rocm_aiter_mla_sparse import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/v1/attention/ops/rocm_aiter_mla_sparse.py", line 11, in <module>
+    from vllm.v1.attention.backends.mla.indexer import DeepseekV32IndexerMetadata
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/v1/attention/backends/mla/indexer.py", line 11, in <module>
+    from vllm.utils.deep_gemm import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/utils/deep_gemm.py", line 360, in <module>
+    @torch.compile(dynamic=True, backend=current_platform.simple_compile_backend)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/__init__.py", line 2674, in fn
+    return compile(  # pyrefly: ignore  # no-matching-overload
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/__init__.py", line 2745, in compile
+    return torch._dynamo.optimize(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 1404, in optimize
+    return _optimize(rebuild_ctx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 1508, in _optimize
+    backend.get_compiler_config()
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/__init__.py", line 2438, in get_compiler_config
+    from vllm.v1.attention.backends.mla.indexer import DeepseekV32IndexerMetadata
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/v1/attention/backends/mla/indexer.py", line 11, in <module>
+    from torch._inductor.compile_fx import get_patched_config_dict
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_inductor/compile_fx.py", line 69, in <module>
+    from vllm.utils.deep_gemm import (
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/utils/deep_gemm.py", line 360, in <module>
+    from torch._inductor.debug import (
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_inductor/debug.py", line 38, in <module>
+    @torch.compile(dynamic=True, backend=current_platform.simple_compile_backend)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/__init__.py", line 2674, in fn
+    from .scheduler import (
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_inductor/scheduler.py", line 46, in <module>
+    return compile(  # pyrefly: ignore  # no-matching-overload
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/__init__.py", line 2745, in compile
+    return torch._dynamo.optimize(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 1404, in optimize
+    return _optimize(rebuild_ctx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 1508, in _optimize
+    backend.get_compiler_config()
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/__init__.py", line 2438, in get_compiler_config
+    from torch._inductor.compile_fx import get_patched_config_dict
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_inductor/compile_fx.py", line 69, in <module>
+    from .comm_analysis import (
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1130, in get_data
+KeyboardInterrupt
+    from torch._inductor.debug import (
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_inductor/debug.py", line 38, in <module>
+    from .scheduler import (
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_inductor/scheduler.py", line 43, in <module>
+    from . import comms, config, config_comms, dependencies, ir, metrics
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_inductor/comms.py", line 21, in <module>
+    from . import config, config_comms, ir
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/_inductor/config_comms.py", line 71, in <module>
+    install_config_module(sys.modules[__name__])
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/utils/_config_module.py", line 223, in install_config_module
+    compile_ignored_keys = get_assignments_with_compile_ignored_comments(module)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/site-packages/torch/utils/_config_module.py", line 238, in get_assignments_with_compile_ignored_comments
+    source_code = inspect.getsource(module)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/inspect.py", line 1258, in getsource
+    lines, lnum = getsourcelines(object)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/inspect.py", line 1240, in getsourcelines
+    lines, lnum = findsource(object)
+                  ^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/inspect.py", line 1073, in findsource
+    lines = linecache.getlines(file, module.__dict__)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rjie/miniconda3/envs/lcb/lib/python3.11/tokenize.py", line 396, in open
+    buffer = _builtin_open(filename, 'rb')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+ERROR 04-04 23:24:36 [utils.py:289] Exception occurred while running API servers: Process EngineCore_DP0 (PID: 3896054) died with exit code None
+ERROR 04-04 23:24:36 [utils.py:289] Traceback (most recent call last):
+ERROR 04-04 23:24:36 [utils.py:289]   File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/v1/utils.py", line 276, in wait_for_completion_or_failure
+ERROR 04-04 23:24:36 [utils.py:289]     raise RuntimeError(
+ERROR 04-04 23:24:36 [utils.py:289] RuntimeError: Process EngineCore_DP0 (PID: 3896054) died with exit code None
+INFO 04-04 23:24:36 [utils.py:292] Terminating remaining processes ...
+Traceback (most recent call last):
+  File "/home/rjie/miniconda3/envs/lcb/bin/vllm", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/entrypoints/cli/main.py", line 73, in main
+    args.dispatch_function(args)
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/entrypoints/cli/serve.py", line 108, in cmd
+    run_multi_api_server(args)
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/entrypoints/cli/serve.py", line 293, in run_multi_api_server
+    wait_for_completion_or_failure(
+  File "/orcd/home/002/rjie/projects/controlability/vllm/vllm/v1/utils.py", line 276, in wait_for_completion_or_failure
+    raise RuntimeError(
+RuntimeError: Process EngineCore_DP0 (PID: 3896054) died with exit code None

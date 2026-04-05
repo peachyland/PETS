@@ -5,9 +5,9 @@ echo $NEXT_JOB_ID > job_id.log
 
 GPU_ID="0,1"
 
-TASK_NAME="brumo"
+TASK_NAME="hmmt"
 
-MY_CMD="./launch.sh --model-dir deepseek-ai/DeepSeek-R1-Distill-Qwen-7B --task ${TASK_NAME} --n 64 --dp-size 2 --out ./results/deepseek_supp_${TASK_NAME}.jsonl"
+MY_CMD="./launch.sh --model-dir mistralai/Ministral-3-8B-Reasoning-2512 --task ${TASK_NAME} --n 64 --dp-size 2 --out ./results/mistral_new_${TASK_NAME}_300.jsonl --port 8003"
 
 MY_ROOT_PATH=`pwd`
 

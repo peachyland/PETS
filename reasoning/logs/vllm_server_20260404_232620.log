@@ -1,0 +1,257 @@
+INFO 04-04 23:26:32 [utils.py:302] 
+INFO 04-04 23:26:32 [utils.py:302]        █     █     █▄   ▄█
+INFO 04-04 23:26:32 [utils.py:302]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.17.0
+INFO 04-04 23:26:32 [utils.py:302]   █▄█▀ █     █     █     █  model   deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+INFO 04-04 23:26:32 [utils.py:302]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+INFO 04-04 23:26:32 [utils.py:302] 
+INFO 04-04 23:26:32 [utils.py:238] non-default args: {'model_tag': 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', 'api_server_count': 4, 'host': '0.0.0.0', 'model': 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', 'data_parallel_size': 2, 'gpu_memory_utilization': 0.97}
+WARNING 04-04 23:26:32 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+WARNING 04-04 23:26:32 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+WARNING 04-04 23:26:32 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+WARNING 04-04 23:26:32 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+WARNING 04-04 23:26:32 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+INFO 04-04 23:26:33 [model.py:531] Resolved architecture: Qwen2ForCausalLM
+INFO 04-04 23:26:33 [model.py:1554] Using max model len 131072
+INFO 04-04 23:26:33 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 04-04 23:26:33 [vllm.py:747] Asynchronous scheduling is enabled.
+INFO 04-04 23:26:33 [utils.py:865] Started DP Coordinator process (PID: 3968878)
+INFO 04-04 23:26:33 [utils.py:217] Started 4 API server processes
+(EngineCore_DP0 pid=3968884) INFO 04-04 23:26:53 [core.py:101] Initializing a V1 LLM engine (v0.17.0) with config: model='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', speculative_config=None, tokenizer='deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=deepseek-ai/DeepSeek-R1-Distill-Qwen-7B, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore_DP0 pid=3968884) WARNING 04-04 23:26:53 [multiproc_executor.py:945] Reducing Torch parallelism from 32 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore_DP0 pid=3968884) INFO 04-04 23:26:53 [multiproc_executor.py:134] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.1.33.1 (local), world_size=1, local_world_size=1
+(ApiServer_3 pid=3968892) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_3 pid=3968892) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_3 pid=3968892) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_3 pid=3968892) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_3 pid=3968892) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_0 pid=3968887) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_0 pid=3968887) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_0 pid=3968887) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_0 pid=3968887) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_0 pid=3968887) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(EngineCore_DP1 pid=3968885) WARNING 04-04 23:26:53 [multiproc_executor.py:945] Reducing Torch parallelism from 32 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore_DP1 pid=3968885) INFO 04-04 23:26:53 [multiproc_executor.py:134] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.1.33.1 (local), world_size=1, local_world_size=1
+(ApiServer_2 pid=3968891) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_2 pid=3968891) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_2 pid=3968891) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_2 pid=3968891) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_2 pid=3968891) WARNING 04-04 23:26:53 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_1 pid=3968888) WARNING 04-04 23:26:54 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_STREAM
+(ApiServer_1 pid=3968888) WARNING 04-04 23:26:54 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_FLAT_LOGPROBS
+(ApiServer_1 pid=3968888) WARNING 04-04 23:26:54 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_TOPK
+(ApiServer_1 pid=3968888) WARNING 04-04 23:26:54 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CONF_MODE
+(ApiServer_1 pid=3968888) WARNING 04-04 23:26:54 [envs.py:1710] Unknown vLLM environment variable detected: VLLM_CLIENT_TIMEOUT
+(ApiServer_3 pid=3968892) INFO 04-04 23:26:54 [model.py:531] Resolved architecture: Qwen2ForCausalLM
+(ApiServer_3 pid=3968892) INFO 04-04 23:26:54 [model.py:1554] Using max model len 131072
+(ApiServer_0 pid=3968887) INFO 04-04 23:26:54 [model.py:531] Resolved architecture: Qwen2ForCausalLM
+(ApiServer_0 pid=3968887) INFO 04-04 23:26:54 [model.py:1554] Using max model len 131072
+(ApiServer_2 pid=3968891) INFO 04-04 23:26:54 [model.py:531] Resolved architecture: Qwen2ForCausalLM
+(ApiServer_2 pid=3968891) INFO 04-04 23:26:54 [model.py:1554] Using max model len 131072
+(ApiServer_1 pid=3968888) INFO 04-04 23:26:54 [model.py:531] Resolved architecture: Qwen2ForCausalLM
+(ApiServer_3 pid=3968892) INFO 04-04 23:26:54 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_1 pid=3968888) INFO 04-04 23:26:54 [model.py:1554] Using max model len 131072
+(ApiServer_3 pid=3968892) INFO 04-04 23:26:54 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_0 pid=3968887) INFO 04-04 23:26:54 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_0 pid=3968887) INFO 04-04 23:26:54 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_2 pid=3968891) INFO 04-04 23:26:54 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_2 pid=3968891) INFO 04-04 23:26:54 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_1 pid=3968888) INFO 04-04 23:26:54 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=8192.
+(ApiServer_1 pid=3968888) INFO 04-04 23:26:54 [vllm.py:747] Asynchronous scheduling is enabled.
+(Worker pid=3979116) INFO 04-04 23:27:06 [parallel_state.py:1393] world_size=1 rank=0 local_rank=1 distributed_init_method=tcp://127.0.0.1:56711 backend=nccl
+(Worker pid=3978970) INFO 04-04 23:27:06 [parallel_state.py:1393] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:39497 backend=nccl
+(Worker pid=3978970) INFO 04-04 23:27:06 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(Worker pid=3979116) INFO 04-04 23:27:06 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(Worker pid=3978970) INFO 04-04 23:27:07 [base.py:106] Offloader set to NoopOffloader
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:07 [gpu_model_runner.py:4255] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+(Worker pid=3979116) INFO 04-04 23:27:07 [base.py:106] Offloader set to NoopOffloader
+(Worker pid=3979116) (Worker pid=3979116) INFO 04-04 23:27:07 [gpu_model_runner.py:4255] Starting to load model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B...
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:07 [cuda.py:405] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:07 [flash_attn.py:587] Using FlashAttention version 3
+(Worker pid=3978970) (Worker pid=3978970) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(Worker pid=3978970) (Worker pid=3978970) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(Worker pid=3979116) (Worker pid=3979116) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(Worker pid=3979116) (Worker pid=3979116) <frozen importlib._bootstrap_external>:1241: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(Worker pid=3978970) (Worker pid=3978970) Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+(Worker pid=3979116) (Worker pid=3979116) Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+(Worker pid=3978970) (Worker pid=3978970) Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.52s/it]
+(Worker pid=3979116) (Worker pid=3979116) Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.40s/it]
+(Worker pid=3979116) (Worker pid=3979116) Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.52s/it]
+(Worker pid=3978970) (Worker pid=3978970) Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.57s/it]
+(Worker pid=3978970) (Worker pid=3978970) Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.56s/it]
+(Worker pid=3979116) (Worker pid=3979116) Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.50s/it]
+(Worker pid=3978970) (Worker pid=3978970) 
+(Worker pid=3979116) (Worker pid=3979116) 
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:11 [default_loader.py:293] Loading weights took 3.39 seconds
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:11 [gpu_model_runner.py:4338] Model loading took 14.27 GiB memory and 4.370934 seconds
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:13 [decorators.py:465] Directly load AOT compilation from path /home/rjie/.cache/vllm/torch_compile_cache/torch_aot_compile/359860a8909b0e623ced0e6b5f83144831a805c9d489795875bf085b8e828fd7/rank_0_0/model
+(Worker pid=3979116) (Worker pid=3979116) INFO 04-04 23:27:13 [decorators.py:465] Directly load AOT compilation from path /home/rjie/.cache/vllm/torch_compile_cache/torch_aot_compile/359860a8909b0e623ced0e6b5f83144831a805c9d489795875bf085b8e828fd7/rank_0_1/model
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:16 [backends.py:916] Using cache directory: /home/rjie/.cache/vllm/torch_compile_cache/4fea75f166/rank_0_0/backbone for vLLM's torch.compile
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:16 [backends.py:976] Dynamo bytecode transform time: 4.92 s
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:18 [backends.py:266] Directly load the compiled graph(s) for compile range (1, 8192) from the cache, took 1.123 s
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:18 [monitor.py:35] torch.compile takes 6.21 s in total
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:19 [gpu_worker.py:424] Available KV cache memory: 118.99 GiB
+(EngineCore_DP0 pid=3968884) INFO 04-04 23:27:19 [kv_cache_utils.py:1314] GPU KV cache size: 2,228,112 tokens
+(EngineCore_DP0 pid=3968884) INFO 04-04 23:27:19 [kv_cache_utils.py:1319] Maximum concurrency for 131,072 tokens per request: 17.00x
+(EngineCore_DP1 pid=3968885) INFO 04-04 23:27:19 [kv_cache_utils.py:1314] GPU KV cache size: 2,228,112 tokens
+(EngineCore_DP1 pid=3968885) INFO 04-04 23:27:19 [kv_cache_utils.py:1319] Maximum concurrency for 131,072 tokens per request: 17.00x
+(Worker pid=3978970) (Worker pid=3978970) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s](Worker pid=3979116) (Worker pid=3979116) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:00<00:02, 23.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   8%|▊         | 4/51 [00:00<00:01, 32.32it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  14%|█▎        | 7/51 [00:00<00:01, 30.41it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:00<00:01, 33.33it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  22%|██▏       | 11/51 [00:00<00:01, 32.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:01, 34.47it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:00<00:01, 33.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███▏      | 16/51 [00:00<00:00, 35.40it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  37%|███▋      | 19/51 [00:00<00:00, 34.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 20/51 [00:00<00:00, 36.55it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▌     | 23/51 [00:00<00:00, 36.29it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:00<00:00, 36.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:00<00:00, 36.27it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▍    | 28/51 [00:00<00:00, 36.70it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  61%|██████    | 31/51 [00:00<00:00, 35.81it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 32/51 [00:00<00:00, 36.26it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  69%|██████▊   | 35/51 [00:01<00:00, 36.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:00<00:00, 36.75it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:01<00:00, 35.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  78%|███████▊  | 40/51 [00:01<00:00, 35.94it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  84%|████████▍ | 43/51 [00:01<00:00, 36.61it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▋ | 44/51 [00:01<00:00, 36.77it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  92%|█████████▏| 47/51 [00:01<00:00, 37.31it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:01<00:00, 37.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:01<00:00, 35.98it/s]
+(Worker pid=3978970) (Worker pid=3978970) Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:01<00:00, 36.79it/s]
+(Worker pid=3979116) (Worker pid=3979116) Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  10%|▉         | 5/51 [00:00<00:00, 48.31it/s]Capturing CUDA graphs (decode, FULL):  10%|▉         | 5/51 [00:00<00:00, 47.81it/s]Capturing CUDA graphs (decode, FULL):  22%|██▏       | 11/51 [00:00<00:00, 51.74it/s]Capturing CUDA graphs (decode, FULL):  22%|██▏       | 11/51 [00:00<00:00, 51.12it/s]Capturing CUDA graphs (decode, FULL):  33%|███▎      | 17/51 [00:00<00:00, 54.92it/s]Capturing CUDA graphs (decode, FULL):  35%|███▌      | 18/51 [00:00<00:00, 56.35it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 24/51 [00:00<00:00, 59.35it/s]Capturing CUDA graphs (decode, FULL):  49%|████▉     | 25/51 [00:00<00:00, 60.72it/s]Capturing CUDA graphs (decode, FULL):  61%|██████    | 31/51 [00:00<00:00, 62.87it/s]Capturing CUDA graphs (decode, FULL):  65%|██████▍   | 33/51 [00:00<00:00, 64.34it/s]Capturing CUDA graphs (decode, FULL):  75%|███████▍  | 38/51 [00:00<00:00, 65.16it/s]Capturing CUDA graphs (decode, FULL):  80%|████████  | 41/51 [00:00<00:00, 66.75it/s]Capturing CUDA graphs (decode, FULL):  90%|█████████ | 46/51 [00:00<00:00, 67.25it/s]Capturing CUDA graphs (decode, FULL):  96%|█████████▌| 49/51 [00:00<00:00, 68.71it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:00<00:00, 64.22it/s]
+Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:00<00:00, 63.22it/s]
+(Worker pid=3978970) (Worker pid=3978970) INFO 04-04 23:27:21 [gpu_model_runner.py:5360] Graph capturing finished in 3 secs, took 0.60 GiB
+(EngineCore_DP0 pid=3968884) INFO 04-04 23:27:21 [core.py:282] init engine (profile, create kv cache, warmup model) took 9.81 seconds
+(EngineCore_DP1 pid=3968885) INFO 04-04 23:27:21 [core.py:282] init engine (profile, create kv cache, warmup model) took 9.81 seconds
+INFO 04-04 23:27:23 [coordinator.py:203] All engine subscriptions received by DP coordinator
+(EngineCore_DP0 pid=3968884) INFO 04-04 23:27:23 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_0 pid=3968887) WARNING 04-04 23:27:23 [loggers.py:1271] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(ApiServer_1 pid=3968888) WARNING 04-04 23:27:23 [loggers.py:1271] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(EngineCore_DP1 pid=3968885) INFO 04-04 23:27:23 [vllm.py:747] Asynchronous scheduling is enabled.
+(ApiServer_3 pid=3968892) WARNING 04-04 23:27:23 [loggers.py:1271] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+(ApiServer_2 pid=3968891) WARNING 04-04 23:27:23 [loggers.py:1271] AsyncLLM created with api_server_count more than 1; disabling stats logging to avoid incomplete stats.
+INFO 04-04 23:27:23 [utils.py:248] Waiting for API servers to complete ...
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:23 [api_server.py:495] Supported tasks: ['generate']
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:23 [api_server.py:495] Supported tasks: ['generate']
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:23 [api_server.py:495] Supported tasks: ['generate']
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:23 [api_server.py:495] Supported tasks: ['generate']
+(ApiServer_0 pid=3968887) WARNING 04-04 23:27:23 [model.py:1355] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(ApiServer_2 pid=3968891) WARNING 04-04 23:27:23 [model.py:1355] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(ApiServer_3 pid=3968892) WARNING 04-04 23:27:23 [model.py:1355] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(ApiServer_1 pid=3968888) WARNING 04-04 23:27:23 [model.py:1355] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:23 [serving.py:185] Warming up chat template processing...
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:23 [serving.py:185] Warming up chat template processing...
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:23 [serving.py:185] Warming up chat template processing...
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:23 [serving.py:185] Warming up chat template processing...
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [hf.py:318] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [hf.py:318] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [serving.py:210] Chat template warmup completed in 677.7ms
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [serving.py:210] Chat template warmup completed in 685.6ms
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [hf.py:318] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [hf.py:318] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [serving.py:210] Chat template warmup completed in 700.7ms
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [serving.py:210] Chat template warmup completed in 706.1ms
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [api_server.py:500] Starting vLLM API server 3 on http://0.0.0.0:8000
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:38] Available routes are:
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /openapi.json, Methods: HEAD, GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /docs, Methods: HEAD, GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /redoc, Methods: HEAD, GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /tokenize, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /detokenize, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /load, Methods: GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /version, Methods: GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /health, Methods: GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /metrics, Methods: GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/models, Methods: GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /ping, Methods: GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /ping, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /invocations, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/completions, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/messages, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_3 pid=3968892) INFO 04-04 23:27:24 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [api_server.py:500] Starting vLLM API server 2 on http://0.0.0.0:8000
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:38] Available routes are:
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /openapi.json, Methods: GET, HEAD
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /docs, Methods: GET, HEAD
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /redoc, Methods: GET, HEAD
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /tokenize, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /detokenize, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /load, Methods: GET
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /version, Methods: GET
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /health, Methods: GET
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /metrics, Methods: GET
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/models, Methods: GET
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /ping, Methods: GET
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /ping, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /invocations, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/completions, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/messages, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_2 pid=3968891) INFO 04-04 23:27:24 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [api_server.py:500] Starting vLLM API server 1 on http://0.0.0.0:8000
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:38] Available routes are:
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /openapi.json, Methods: HEAD, GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /docs, Methods: HEAD, GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /redoc, Methods: HEAD, GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /tokenize, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /detokenize, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /load, Methods: GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /version, Methods: GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /health, Methods: GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /metrics, Methods: GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/models, Methods: GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /ping, Methods: GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /ping, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /invocations, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/completions, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/messages, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_1 pid=3968888) INFO 04-04 23:27:24 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [api_server.py:500] Starting vLLM API server 0 on http://0.0.0.0:8000
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:38] Available routes are:
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /openapi.json, Methods: GET, HEAD
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /docs, Methods: GET, HEAD
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /redoc, Methods: GET, HEAD
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /tokenize, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /detokenize, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /load, Methods: GET
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /version, Methods: GET
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /health, Methods: GET
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /metrics, Methods: GET
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/models, Methods: GET
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /ping, Methods: GET
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /ping, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /invocations, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/completions, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/messages, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(ApiServer_0 pid=3968887) INFO 04-04 23:27:24 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(ApiServer_2 pid=3968891) INFO:     Started server process [3968891]
+(ApiServer_2 pid=3968891) INFO:     Waiting for application startup.
+(ApiServer_0 pid=3968887) INFO:     Started server process [3968887]
+(ApiServer_0 pid=3968887) INFO:     Waiting for application startup.
+(ApiServer_1 pid=3968888) INFO:     Started server process [3968888]
+(ApiServer_1 pid=3968888) INFO:     Waiting for application startup.
+(ApiServer_3 pid=3968892) INFO:     Started server process [3968892]
+(ApiServer_3 pid=3968892) INFO:     Waiting for application startup.
+(ApiServer_2 pid=3968891) INFO:     Application startup complete.
+(ApiServer_1 pid=3968888) INFO:     Application startup complete.
+(ApiServer_3 pid=3968892) INFO:     Application startup complete.
+(ApiServer_0 pid=3968887) INFO:     Application startup complete.
+(ApiServer_2 pid=3968891) INFO:     127.0.0.1:50336 - "GET /v1/models HTTP/1.1" 200 OK
+(ApiServer_0 pid=3968887) INFO:     127.0.0.1:37818 - "GET /v1/models HTTP/1.1" 200 OK

@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """GPQA Diamond inference and evaluation."""
 
+from pathlib import Path
+from huggingface_hub import login
+
+token = Path("/home/rjie/projects/rj_hf_key.txt").read_text(encoding="utf-8").strip()
+login(token=token)
+print("Hugging Face login success")
+
 import argparse
 import random
 import re
@@ -95,7 +102,7 @@ def main():
     )
     ap.add_argument("--subset", default="gpqa_diamond", help="Dataset subset")
     ap.add_argument("--out", default="gpqa_preds.jsonl", help="Output JSONL path")
-    ap.add_argument("--seed", type=int, default=42, help="Random seed for choice shuffling")
+    # ap.add_argument("--seed", type=int, default=42, help="Random seed for choice shuffling")
     args = ap.parse_args()
 
     if args.eval_only:
@@ -111,7 +118,26 @@ def main():
     dataset = common.load_hf_split(args.data_path, split="train", subset=args.subset)
     if args.limit:
         dataset = dataset[:args.limit]
+
+    import copy
+    # 截取前16个元素
+    sub_list = dataset
+    # 使用列表推导式结合 deepcopy 重复6次
+    new_list = []
+    for _ in range(5):
+        new_list.extend(copy.deepcopy(sub_list))
+
+    dataset = new_list
+    
     print(f"Loaded {len(dataset)} problems\n")
+
+    if "Llama-3.1-Nemotron-Nano-4B-v1.1" in args.model_name:
+        system_prompt = "detailed thinking on"
+    else:
+        system_prompt = "You are a helpful assistant that solves problems."
+
+    for _ in range(10):
+        print(f"Using system prompt: {system_prompt}")
 
     def process(item):
         prompt_text, correct_letter = build_prompt(item, seed=args.seed)
@@ -123,7 +149,7 @@ def main():
             extract_fn=extract_answer,
             gold_answer=correct_letter,
             problem_text=prompt_text,
-            system_prompt="You are a helpful assistant that solves problems.",
+            system_prompt=system_prompt,
         )
 
     common.run_inference(dataset, process, args.out, args.max_workers, desc="GPQA Diamond")

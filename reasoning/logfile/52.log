@@ -1,0 +1,36 @@
+[INFO] Expert Parallel DISABLED.
+==============================================
+[INFO] PETS Benchmark Configuration
+==============================================
+[INFO] Model: mistralai/Ministral-3-8B-Reasoning-2512
+[INFO] Model Name: Ministral-3-8B-Reasoning-2512
+[INFO] Task: hmmt
+[INFO] Tensor Parallel Size: 1
+[INFO] Data Parallel Size: 2
+[INFO] API Server Count: 4
+[INFO] Samples per question: 64
+[INFO] Temperature: 1.1
+[INFO] Top-P: 0.95
+[INFO] Top Logprobs: 20
+[INFO] API Port: 8003
+[INFO] Output File: ./results/mistral_new_hmmt_300.jsonl
+==============================================
+[INFO] Launching vLLM API server with confidence plugin ...
+[INFO] Server log: /home/rjie/projects/controlability/PETS/reasoning/logs/vllm_server_20260331_154935.log
+[INFO] Extra args: --tokenizer_mode mistral --config_format mistral --load_format mistral --reasoning-parser mistral --enable-auto-tool-choice --tool-call-parser mistral
+[INFO] Waiting for API server to become ready ...
+[INFO] vLLM is ready!
+[INFO] Running inference for task=hmmt with N=64 ...
+Using model: mistralai/Ministral-3-8B-Reasoning-2512 on PORT 8003
+
+Loaded 300 problems
+
+
+Done - 300 ok, 0 failed (23823.9s, 0.01 q/s)
+Results: ./results/mistral_new_hmmt_300.jsonl
+==============================================
+[INFO] Inference completed!
+[INFO] Results saved to: ./results/mistral_new_hmmt_300.jsonl
+==============================================
+[INFO] Stopping vLLM server (PID: 4016375) ...
+[INFO] Server stopped.

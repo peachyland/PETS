@@ -277,7 +277,7 @@ def process_question(
     For gpt-oss models, temperature and top_p are automatically overridden
     to 1, and ``extra_body={"reasoning_effort": "high"}`` is added.
     """
-    qid = item.get("id") or item.get("question_id") or item.get("problem_id")
+    qid = item.get("id") or item.get("question_id") or item.get("problem_id") or item.get("problem_idx")
     _problem = problem_text or item.get("problem") or item.get("question") or item.get("Question") or item.get("prompt")
     _gold = gold_answer if gold_answer is not None else (item.get("answer") or item.get("Answer") or item.get("solution"))
 

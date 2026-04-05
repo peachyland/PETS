@@ -89,6 +89,16 @@ def main():
     
     print(f"Loaded {len(dataset)} problems\n")
 
+    # "detailed thinking on"
+
+    if "Llama-3.1-Nemotron-Nano-4B-v1.1" in args.model_name:
+        system_prompt = "detailed thinking on"
+    else:
+        system_prompt = "You are a helpful assistant that solves math problems."
+
+    for _ in range(10):
+        print(f"Using system prompt: {system_prompt}")
+
     def process(item):
         return common.process_question(
             client, model, item,
@@ -96,7 +106,7 @@ def main():
             top_p=args.top_p, top_logprobs=args.top_logprobs,
             prompt_text=build_prompt(item),
             extract_fn=extract_answer,
-            system_prompt="You are a helpful assistant that solves math problems.",
+            system_prompt=system_prompt,
         )
 
     common.run_inference(dataset, process, args.out, args.max_workers, desc="AIME 2024")

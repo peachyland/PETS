@@ -382,6 +382,7 @@ COMMON_ARGS=(
   --top_logprobs "${TOP_LOGPROBS_VALUE}"
   --max_workers "${MAX_WORKERS}"
   --out "${OUTPUT_FILE}"
+  --model_name "${MODEL_DIR}"
 )
 
 # Add data path if provided
@@ -395,6 +396,12 @@ case "${TASK}" in
     ;;
   aime25)
     python3 aime25.py "${COMMON_ARGS[@]}"
+    ;;
+  aime26)
+    python3 aime26.py "${COMMON_ARGS[@]}"
+    ;;
+  cmimc)
+    python3 cmimc.py "${COMMON_ARGS[@]}"
     ;;
   hmmt)
     python3 hmmt.py "${COMMON_ARGS[@]}"

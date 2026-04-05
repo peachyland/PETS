@@ -1,0 +1,27 @@
+[INFO] Expert Parallel DISABLED.
+==============================================
+[INFO] PETS Benchmark Configuration
+==============================================
+[INFO] Model: Qwen/Qwen3-8B
+[INFO] Model Name: Qwen3-8B
+[INFO] Task: brumo
+[INFO] Tensor Parallel Size: 1
+[INFO] Data Parallel Size: 2
+[INFO] API Server Count: 4
+[INFO] Samples per question: 64
+[INFO] Temperature: 1.1
+[INFO] Top-P: 0.95
+[INFO] Top Logprobs: 20
+[INFO] API Port: 8000
+[INFO] Output File: ./results/qwen_new_brumo.jsonl
+==============================================
+[INFO] Launching vLLM API server with confidence plugin ...
+[INFO] Server log: /home/rjie/projects/controlability/PETS/reasoning/logs/vllm_server_20260327_225025.log
+[INFO] Extra args: 
+[INFO] Waiting for API server to become ready ...
+[INFO] vLLM is ready!
+[INFO] Running inference for task=brumo with N=64 ...
+Using model: Qwen/Qwen3-8B on PORT 8000
+
+Loaded 300 problems
+
