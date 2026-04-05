@@ -496,4 +496,5 @@ def add_common_args(ap):
     ap.add_argument("--limit", type=int, default=None, help="Limit number of questions (for testing)")
     ap.add_argument("--eval-only", action="store_true", help="Evaluate existing results only")
     ap.add_argument("--seed", type=int, default=42, help="Random seed")
+    ap.add_argument("--data_repeat", type=int, default=1, help="Number of times to repeat each data point")
     return ap

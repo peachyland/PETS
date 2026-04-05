@@ -83,7 +83,7 @@ def main():
     # sub_list = [dataset[i] for i in [13, 14, 15, 18]]
     # 使用列表推导式结合 deepcopy 重复6次
     new_list = []
-    for _ in range(10):
+    for _ in range(10 * args.data_repeat):
         new_list.extend(copy.deepcopy(sub_list))
 
     dataset = new_list

@@ -94,6 +94,10 @@ while [[ $# -gt 0 ]]; do
       shift || { echo "[ERROR] --n requires a value"; usage; exit 1; }
       N_VALUE="$1"
       ;;
+    --data-repeat)
+      shift || { echo "[ERROR] --data-repeat requires a value"; usage; exit 1; }
+      DATA_REPEAT="$1"
+      ;;
     --tp-size)
       shift || { echo "[ERROR] --tp-size requires a value"; usage; exit 1; }
       TP_SIZE_VALUE="$1"
@@ -383,6 +387,7 @@ COMMON_ARGS=(
   --max_workers "${MAX_WORKERS}"
   --out "${OUTPUT_FILE}"
   --model_name "${MODEL_DIR}"
+  --data_repeat "${DATA_REPEAT}"
 )
 
 # Add data path if provided

@@ -82,12 +82,20 @@ def main():
     sub_list = dataset
     # 使用列表推导式结合 deepcopy 重复6次
     new_list = []
-    for _ in range(10):
+    for _ in range(10 * args.data_repeat):
         new_list.extend(copy.deepcopy(sub_list))
 
     dataset = new_list
     
     print(f"Loaded {len(dataset)} problems\n")
+
+    if "Llama-3.1-Nemotron-Nano-4B-v1.1" in args.model_name:
+        system_prompt = "detailed thinking on"
+    else:
+        system_prompt = "You are a helpful assistant that solves math problems."
+
+    for _ in range(10):
+        print(f"Using system prompt: {system_prompt}")
 
     def process(item):
         return common.process_question(
