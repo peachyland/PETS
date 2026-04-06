@@ -68,6 +68,7 @@ TASK_VALUE=""
 N_VALUE=""
 TP_SIZE_VALUE=""
 DP_SIZE_VALUE=""
+DATA_REPEAT=""
 ENABLE_EXPERT_PARALLEL_VALUE="0"
 API_SERVER_COUNT_VALUE=""
 TEMP_VALUE="${TEMPERATURE:-1.1}"
@@ -200,6 +201,7 @@ fi
 [[ -z "${N_VALUE}" ]] && N_VALUE=64
 [[ -z "${TP_SIZE_VALUE}" ]] && TP_SIZE_VALUE=1
 [[ -z "${DP_SIZE_VALUE}" ]] && DP_SIZE_VALUE=1
+[[ -z "${DATA_REPEAT}" ]] && DATA_REPEAT=1
 
 if ! [[ "${N_VALUE}" =~ ^[0-9]+$ ]] || (( N_VALUE <= 0 )); then
   echo "[ERROR] --n must be a positive integer (got '${N_VALUE}')"
