@@ -387,3 +387,37 @@ INFO 04-05 23:04:00 [utils.py:248] Waiting for API servers to complete ...
 (ApiServer_2 pid=2571654) INFO:     127.0.0.1:58174 - "POST /v1/chat/completions HTTP/1.1" 200 OK
 (ApiServer_3 pid=2571655) INFO:     127.0.0.1:58172 - "POST /v1/chat/completions HTTP/1.1" 200 OK
 (ApiServer_3 pid=2571655) INFO:     127.0.0.1:40290 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=2571654) INFO:     127.0.0.1:43070 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=2571653) INFO:     127.0.0.1:46398 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=2571652) INFO:     127.0.0.1:54014 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=2571653) INFO:     127.0.0.1:37854 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=2571652) INFO:     127.0.0.1:33128 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_0 pid=2571652) INFO:     127.0.0.1:33144 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=2571653) INFO:     127.0.0.1:51688 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_3 pid=2571655) INFO:     127.0.0.1:51612 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=2571653) INFO:     127.0.0.1:54288 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_1 pid=2571653) INFO:     127.0.0.1:52116 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=2571654) INFO:     127.0.0.1:38682 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(ApiServer_2 pid=2571654) INFO:     127.0.0.1:38684 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 04-06 13:21:47 [utils.py:287] Received KeyboardInterrupt, shutting down API servers...
+INFO 04-06 13:21:48 [utils.py:292] Terminating remaining processes ...
+(ApiServer_2 pid=2571654) INFO:     Shutting down
+(ApiServer_1 pid=2571653) WARNING 04-06 13:21:49 [launcher.py:116] port 8000 is used by process psutil.Process(pid=2571655, name='VLLM::APIServer_3', status='running') launched with command:
+(ApiServer_1 pid=2571653) WARNING 04-06 13:21:49 [launcher.py:116] VLLM::APIServer_3                                                                                                                                              
+(ApiServer_1 pid=2571653) INFO 04-06 13:21:49 [launcher.py:122] Shutting down FastAPI HTTP server.
+(ApiServer_1 pid=2571653) INFO:     Shutting down
+(ApiServer_1 pid=2571653) INFO:     Waiting for application shutdown.
+(ApiServer_1 pid=2571653) INFO:     Application shutdown complete.
+(ApiServer_2 pid=2571654) WARNING 04-06 13:21:51 [launcher.py:116] port 8000 is used by process psutil.Process(pid=2571655, name='VLLM::APIServer_3', status='running') launched with command:
+(ApiServer_2 pid=2571654) WARNING 04-06 13:21:51 [launcher.py:116] VLLM::APIServer_3                                                                                                                                              
+(ApiServer_2 pid=2571654) INFO 04-06 13:21:51 [launcher.py:122] Shutting down FastAPI HTTP server.
+(ApiServer_2 pid=2571654) INFO:     Shutting down
+(ApiServer_2 pid=2571654) INFO:     Waiting for application shutdown.
+(ApiServer_2 pid=2571654) INFO:     Application shutdown complete.
+(Worker pid=2572229) (Worker pid=2572229) INFO 04-06 13:21:53 [multiproc_executor.py:749] Parent process exited, terminating worker
+(Worker pid=2572229) (Worker pid=2572229) INFO 04-06 13:21:53 [multiproc_executor.py:802] WorkerProc shutting down.
+(Worker pid=2572234) (Worker pid=2572234) INFO 04-06 13:21:53 [multiproc_executor.py:749] Parent process exited, terminating worker
+(Worker pid=2572234) (Worker pid=2572234) INFO 04-06 13:21:53 [multiproc_executor.py:802] WorkerProc shutting down.
+terminate called without an active exception
+/home/rjie/miniconda3/envs/lcb/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

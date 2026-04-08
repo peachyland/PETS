@@ -326,7 +326,7 @@ def process_question(
         final_idx = next((i for i, a in enumerate(answers) if a == final), None) if final else None
 
         return {
-            "id": qid, "problem": _problem, "answer": _gold,
+            "id": qid, "problem": _problem, "answer": _gold, "prompt_text": prompt_text,
             "pred": final, "answers": answers, "raw_outputs": raw_outputs,
             "trace_confidence": traces,
             "final_trace": traces[final_idx] if final_idx is not None else None,

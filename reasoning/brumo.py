@@ -87,7 +87,7 @@ def main():
     
     print(f"Loaded {len(dataset)} problems\n")
 
-    if "Llama-3.1-Nemotron-Nano-4B-v1.1" in args.model_name_check_system_prompt:
+    if "Llama-3.1-Nemotron-Nano-4B-v1.1" in args.model_name:
         system_prompt = "detailed thinking on"
     else:
         system_prompt = "You are a helpful assistant that solves math problems."
